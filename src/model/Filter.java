@@ -8,7 +8,11 @@ public class Filter {
     private String boundOperator;
     private int boundNumber;
 
-    public Filter() {}
+    public Filter() {
+        used = false;
+        boundOperator = null;
+        boundNumber = 0;
+    }
     public void setFilter(boolean _used) {
         used = _used;
     }
