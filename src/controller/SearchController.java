@@ -4,6 +4,8 @@ import model.Search;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.Scanner;
+
 /**
  * Created by Holy on 01-Jun-17.
  */
@@ -65,11 +67,12 @@ public class SearchController {
                 searchRequest = new JsonRequest(search.getSearchUrl());
                 searchJsonObj = new JSONObject(searchRequest.getRawJson());
                 searchJsonArray = searchJsonObj.getJSONArray("items");
+                System.out.println(search.getSearchUrl());
             }
             for (int i = 0; i < searchJsonArray.length(); i++) {
                 JSONObject result = (JSONObject) searchJsonArray.get(i);
                 String username = result.getString("login");
-                searchResults[i] = new UserController(username);
+                searchResults[count-1] = new UserController(username);
                 count++;
             }
         }
@@ -81,11 +84,17 @@ public class SearchController {
         return searchResults[index];
     }
     public static void main(String[] args) {
-        SearchController searchController = new SearchController("holy", true, ">", 30, true, "<", 1000);
+        SearchController searchController = new SearchController("holy", true, ">", 15, true, "<", 1000);
         System.out.println(searchController.getSearchResults().length + "");
         for(int i = 0; i < searchController.getSearchResults().length; i++) {
             System.out.print(i + " ");
-            System.out.println(searchController.getSearchResult(i).getUsername());
+            System.out.println(searchController.getSearchResult(i).getUsername() + " " + searchController.getSearchResult(i).getRepositoriesCount() + " " + searchController.getSearchResult(i).getFollowers());
+        }
+        Scanner sc = new Scanner(System.in);
+        int input = sc.nextInt();
+        searchController.getSearchResult(input).setRepositories();
+        for(int i = 0; i < searchController.getSearchResult(input).getRepositoriesCount(); i++) {
+            System.out.println(searchController.getSearchResult(input).getRepository(i).getName());
         }
     }
 }
