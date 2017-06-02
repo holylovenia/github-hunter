@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="ch.inftec.ju:ju-jasypt:6.1-4" type="repository">
+    <properties maven-id="ch.inftec.ju:ju-jasypt:6.1-4" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/ju-jasypt-6.1-4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/jasypt-1.9.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

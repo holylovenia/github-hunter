@@ -8,7 +8,6 @@ public class Search {
     private Filter repositoriesFilter;
     private Filter followersFilter;
     private String searchUrl;
-    private User[] searchResults;
     private final String defaultSearchUrl = "https://api.github.com/search/users?q=";
 
     public Search() {
@@ -16,7 +15,6 @@ public class Search {
         repositoriesFilter = new Filter();
         followersFilter = new Filter();
         searchUrl = null;
-        searchResults = null;
     }
     public void setQuery(String _query) {
         query = _query;
@@ -36,9 +34,6 @@ public class Search {
     public void setSearchUrl(String _searchUrl) {
         searchUrl = _searchUrl;
     }
-    public void setSearchResults(User[] _users) {
-        searchResults = _users;
-    }
     public void generateSearchUrl() {
         String processedQueryUrl = query.trim().replace(" ", "+");
         searchUrl = defaultSearchUrl + processedQueryUrl;
@@ -50,6 +45,7 @@ public class Search {
             String processedFollowersFilterUrl = "+followers:" + getFollowersFilter().getBoundOperator() + getFollowersFilter().getBoundNumber();
             searchUrl += processedFollowersFilterUrl;
         }
+        searchUrl += "&page=";
     }
     public String getQuery() {
         return query;
@@ -62,9 +58,6 @@ public class Search {
     }
     public String getSearchUrl() {
         return searchUrl;
-    }
-    public User[] getSearchResults() {
-        return searchResults;
     }
     public static void main(String[] args) {
         Search search = new Search();

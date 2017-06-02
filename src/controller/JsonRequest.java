@@ -1,5 +1,7 @@
 package controller;
 
+import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -9,14 +11,21 @@ import java.net.URL;
  * Created by Holy on 31-May-17.
  */
 public class JsonRequest {
-    String message;
-    int status;
-    String link;
-    String rawJson;
+    private String message;
+    private int status;
+    private String link;
+    private String rawJson;
+    private final String token = "9bm3nqJ2RZi90Z6L6Cu1qvvKuxlxILBEgBMFtQaDp+VFGq+pewXhRypHA5ZDEUqVCjFmEDrnOg4=";
 
     public JsonRequest(String url) {
         link = url;
         rawJson = generateJson();
+    }
+    public String generateDecryptedToken() {
+        StandardPBEStringEncryptor encryptor = new StandardPBEStringEncryptor();
+        encryptor.setPassword("holy-github-hunter");
+        String decryptedToken = encryptor.decrypt(token);
+        return decryptedToken;
     }
     public String getMessage() {
         return message;
@@ -35,6 +44,7 @@ public class JsonRequest {
         try {
             URL url = new URL(link);
             urlConnection = (HttpURLConnection) url.openConnection();
+            urlConnection.setRequestProperty("Authorization", "token " + generateDecryptedToken());
             urlConnection.setRequestMethod("GET");
             status = urlConnection.getResponseCode();
             message = urlConnection.getResponseMessage();
