@@ -4,55 +4,68 @@ package model;
  * Created by Holy on 31-May-17.
  */
 public class User {
-    private String username;
-    private String email;
-    private String fullname;
-    private Repository[] repositories;
-    private int repositoriesCount;
-    private int followers;
 
-    public User() {
-        username = null;
-        email = null;
-        fullname = null;
-        repositoriesCount = 0;
-        followers = 0;
-        repositories = null;
-    }
-    public void setUsername(String _username) {
-        username = _username;
-    }
-    public void setEmail(String _email) {
-        email = _email;
-    }
-    public void setFullname(String _fullname) {
-        fullname = _fullname;
-    }
-    public void setRepositories(Repository[] _repositories) {
-        repositories = _repositories;
-    }
-    public void setRepositoriesCount(int _repositoriesCount) {
-        repositoriesCount = _repositoriesCount;
-    }
-    public void setFollowers(int _followers) {
-        followers = _followers;
-    }
-    public String getUsername() {
-        return username;
-    }
-    public String getEmail() {
-        return email;
-    }
-    public String getFullname() {
-        return fullname;
-    }
-    public Repository getRepository(int index) {
-        return repositories[index];
-    }
-    public int getRepositoriesCount() {
-        return repositoriesCount;
-    }
-    public int getFollowers() {
-        return followers;
-    }
+  private String username;
+  private String email;
+  private String fullname;
+  private Repository[] repositories;
+  private int repositoriesCount;
+  private int followers;
+
+  public User() {
+    username = null;
+    email = null;
+    fullname = null;
+    repositoriesCount = 0;
+    followers = 0;
+    repositories = null;
+  }
+
+  public void setRepositories(Repository[] _repositories) {
+    repositories = _repositories;
+  }
+
+  public String getUsername() {
+    return username;
+  }
+
+  public void setUsername(String _username) {
+    username = _username;
+  }
+
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String _email) {
+    email = _email;
+  }
+
+  public String getFullname() {
+    return fullname;
+  }
+
+  public void setFullname(String _fullname) {
+    fullname = _fullname;
+  }
+
+  public Repository getRepository(int index) {
+    return repositories[index];
+  }
+
+  public int getRepositoriesCount() {
+    return repositoriesCount;
+  }
+
+  public void setRepositoriesCount(int _repositoriesCount) {
+    repositoriesCount = _repositoriesCount;
+  }
+
+  public int getFollowers() {
+    return followers;
+  }
+
+  public void setFollowers(int _followers) {
+    followers = _followers;
+  }
 }
