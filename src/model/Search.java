@@ -4,6 +4,7 @@ package model;
  * Created by Holy on 01-Jun-17.
  */
 public class Search {
+    private int type;
     private String query;
     private Filter repositoriesFilter;
     private Filter followersFilter;
@@ -11,10 +12,18 @@ public class Search {
     private final String defaultSearchUrl = "https://api.github.com/search/users?q=";
 
     public Search() {
+        type = 0;
         query = null;
         repositoriesFilter = new Filter();
         followersFilter = new Filter();
         searchUrl = null;
+    }
+    public void setType(int _type) {
+        if((_type > 0) && (_type <= 3)) {
+            type = _type;
+        } else {
+            type = 0;
+        }
     }
     public void setQuery(String _query) {
         query = _query;
@@ -45,7 +54,23 @@ public class Search {
             String processedFollowersFilterUrl = "+followers:" + getFollowersFilter().getBoundOperator() + getFollowersFilter().getBoundNumber();
             searchUrl += processedFollowersFilterUrl;
         }
+        switch(type) {
+            case 1:
+                searchUrl += "+in:login";
+                break;
+            case 2:
+                searchUrl += "+in:email";
+                break;
+            case 3:
+                searchUrl += "+in:fullname";
+                break;
+            default:
+                break;
+        }
         searchUrl += "&page=";
+    }
+    public int getType() {
+        return type;
     }
     public String getQuery() {
         return query;

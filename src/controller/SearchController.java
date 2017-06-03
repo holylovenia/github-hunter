@@ -13,38 +13,43 @@ public class SearchController {
     private Search search;
     private UserController[] searchResults;
 
-    public SearchController(String _query) {
+    public SearchController(int _type, String _query) {
         search = new Search();
+        search.setType(_type);
         search.setQuery(_query);
         search.generateSearchUrl();
         setSearchResults();
     }
-    public SearchController(String _query, boolean _repoUsed, boolean _followersUsed) {
+    public SearchController(int _type, String _query, boolean _repoUsed, boolean _followersUsed) {
         search = new Search();
+        search.setType(_type);
         search.setQuery(_query);
         search.setRepositoriesFilter(_repoUsed);
         search.setFollowersFilter(_followersUsed);
         search.generateSearchUrl();
         setSearchResults();
     }
-    public SearchController(String _query, boolean _repoUsed, String _repoBoundOperator, int _repoBoundNumber, boolean _followersUsed) {
+    public SearchController(int _type, String _query, boolean _repoUsed, String _repoBoundOperator, int _repoBoundNumber, boolean _followersUsed) {
         search = new Search();
+        search.setType(_type);
         search.setQuery(_query);
         search.setRepositoriesFilter(_repoUsed, _repoBoundOperator, _repoBoundNumber);
         search.setFollowersFilter(_followersUsed);
         search.generateSearchUrl();
         setSearchResults();
     }
-    public SearchController(String _query, boolean _repoUsed, boolean _followersUsed, String _followersBoundOperator, int _followersBoundNumber) {
+    public SearchController(int _type, String _query, boolean _repoUsed, boolean _followersUsed, String _followersBoundOperator, int _followersBoundNumber) {
         search = new Search();
+        search.setType(_type);
         search.setQuery(_query);
         search.setRepositoriesFilter(_repoUsed);
         search.setFollowersFilter(_followersUsed, _followersBoundOperator, _followersBoundNumber);
         search.generateSearchUrl();
         setSearchResults();
     }
-    public SearchController(String _query, boolean _repoUsed, String _repoBoundOperator, int _repoBoundNumber, boolean _followersUsed, String _followersBoundOperator, int _followersBoundNumber) {
+    public SearchController(int _type, String _query, boolean _repoUsed, String _repoBoundOperator, int _repoBoundNumber, boolean _followersUsed, String _followersBoundOperator, int _followersBoundNumber) {
         search = new Search();
+        search.setType(_type);
         search.setQuery(_query);
         search.setRepositoriesFilter(_repoUsed, _repoBoundOperator, _repoBoundNumber);
         search.setFollowersFilter(_followersUsed, _followersBoundOperator, _followersBoundNumber);
@@ -84,7 +89,7 @@ public class SearchController {
         return searchResults[index];
     }
     public static void main(String[] args) {
-        SearchController searchController = new SearchController("holy", true, ">", 15, true, "<", 1000);
+        SearchController searchController = new SearchController(1, "holy", true, ">", 15, true, "<", 1000);
         System.out.println(searchController.getSearchResults().length + "");
         for(int i = 0; i < searchController.getSearchResults().length; i++) {
             System.out.print(i + " ");
