@@ -36,10 +36,22 @@ public class UserController {
 
   public void initiate(String _username) {
     setUsername(_username);
+    setAvatarUrl();
     setEmail();
     setFullname();
     setRepositoriesCount();
     setFollowers();
+  }
+
+  public void setUsername(String _username) {
+    user.setUsername(_username);
+  }
+
+  public void setAvatarUrl() {
+    if (!(userJsonObj.isNull("avatar_url") || userJsonObj.get("avatar_url").equals(""))) {
+      String _avatarUrl = userJsonObj.getString("avatar_url");
+      user.setAvatarUrl(_avatarUrl);
+    }
   }
 
   public void setEmail() {
@@ -86,8 +98,8 @@ public class UserController {
     return user.getUsername();
   }
 
-  public void setUsername(String _username) {
-    user.setUsername(_username);
+  public String getAvatarUrl() {
+    return user.getAvatarUrl();
   }
 
   public String getEmail() {

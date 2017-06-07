@@ -6,6 +6,7 @@ package model;
 public class User {
 
   private String username;
+  private String avatarUrl;
   private String email;
   private String fullname;
   private Repository[] repositories;
@@ -14,6 +15,7 @@ public class User {
 
   public User() {
     username = null;
+    avatarUrl = null;
     email = null;
     fullname = null;
     repositoriesCount = 0;
@@ -21,8 +23,12 @@ public class User {
     repositories = null;
   }
 
-  public void setRepositories(Repository[] _repositories) {
-    repositories = _repositories;
+  public String getAvatarUrl() {
+    return avatarUrl;
+  }
+
+  public void setAvatarUrl(String _avatarUrl) {
+    avatarUrl = _avatarUrl;
   }
 
   public String getUsername() {
@@ -51,6 +57,10 @@ public class User {
 
   public Repository getRepository(int index) {
     return repositories[index];
+  }
+
+  public void setRepositories(Repository[] _repositories) {
+    repositories = _repositories;
   }
 
   public int getRepositoriesCount() {
