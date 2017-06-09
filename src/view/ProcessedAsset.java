@@ -1,9 +1,12 @@
 package view;
 
+import java.awt.Font;
+import java.awt.FontFormatException;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.net.URL;
 import javax.swing.ImageIcon;
 
@@ -28,5 +31,18 @@ public final class ProcessedAsset {
     g2.drawImage(srcImg, 0, 0, w, h, null);
     g2.dispose();
     return resizedImg;
+  }
+
+  public static Font getFont(Class _class, String _fontName) {
+    Font chosenFont = null;
+    try {
+      chosenFont = Font.createFont(Font.TRUETYPE_FONT,
+          _class.getResource("\\assets\\font\\" + _fontName.toLowerCase() + ".ttf").openStream());
+    } catch (FontFormatException e) {
+      e.printStackTrace();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    return chosenFont;
   }
 }
