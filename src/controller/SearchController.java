@@ -11,7 +11,7 @@ import org.json.JSONObject;
 public class SearchController {
 
   private Search search;
-  private UserController[] searchResults;
+  private static UserController[] searchResults;
 
   public SearchController(int _type, String _query) {
     search = new Search();
@@ -105,16 +105,17 @@ public class SearchController {
         JSONObject result = (JSONObject) searchJsonArray.get(i);
         String username = result.getString("login");
         searchResults[count - 1] = new UserController(username);
+        System.out.println((count-1) + " " + username);
         count++;
       }
     }
   }
 
-  public UserController[] getSearchResults() {
+  public static UserController[] getSearchResults() {
     return searchResults;
   }
 
-  public UserController getSearchResult(int index) {
+  public static UserController getSearchResult(int index) {
     return searchResults[index];
   }
 }

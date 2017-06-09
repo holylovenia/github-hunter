@@ -7,7 +7,9 @@ import java.awt.Image;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
 /**
@@ -20,6 +22,17 @@ public final class ProcessedAsset {
     URL imgPath = _class.getResource(_imagePath);
     ImageIcon imageIcon = new ImageIcon(imgPath);
     Image image = imageIcon.getImage();
+    return image;
+  }
+
+  public static Image getImage(String link) {
+    Image image = null;
+    try {
+      URL url = new URL(link);
+      image = ImageIO.read(url);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
     return image;
   }
 

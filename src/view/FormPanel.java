@@ -7,6 +7,7 @@ import static java.awt.GridBagConstraints.REMAINDER;
 import static java.awt.GridBagConstraints.WEST;
 import static java.awt.event.MouseEvent.MOUSE_CLICKED;
 
+import controller.GitHubHunterController;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
@@ -51,6 +52,8 @@ public class FormPanel extends JPanel {
   private JComboBox followersOperatorChoices;
   private JFormattedTextField followersField;
   private JButton searchButton;
+  public static boolean formFilled;
+  private GitHubHunterController controller;
 
   public FormPanel() {
     setPreferredSize(new Dimension(FORM_WIDTH, FORM_HEIGHT));
@@ -71,6 +74,10 @@ public class FormPanel extends JPanel {
     frame.add(formPanel);
     frame.pack();
     frame.setVisible(true);
+  }
+
+  public void setController(GitHubHunterController _controller) {
+    controller = _controller;
   }
 
   public void createComponents() {
@@ -157,14 +164,14 @@ public class FormPanel extends JPanel {
     constraints.gridy = 1;
     constraints.fill = REMAINDER;
     constraints.insets = new Insets(0, 0, 0, -150);
-    String[] choices = {"Username", "E-mail", "Full name", "All"};
+    String[] choices = {"All", "Username", "E-mail", "Full name"};
     JComboBox _categoryChoices = new JComboBox(choices);
     DefaultListCellRenderer listCellRenderer = new DefaultListCellRenderer();
     listCellRenderer.setHorizontalAlignment(DefaultListCellRenderer.CENTER);
     _categoryChoices.setRenderer(listCellRenderer);
     _categoryChoices.setPrototypeDisplayValue("123456789012345678901234567890123456");
     _categoryChoices.setFont(ProcessedAsset.getFont(getClass(), "roboto-regular").deriveFont(20f));
-    _categoryChoices.setSelectedIndex(3);
+    _categoryChoices.setSelectedIndex(0);
     layout.setConstraints(_categoryChoices, constraints);
     categoryChoices = _categoryChoices;
   }
@@ -282,18 +289,20 @@ public class FormPanel extends JPanel {
     JButton _searchButton = new JButton(searchIcon);
     _searchButton.setFont(ProcessedAsset.getFont(getClass(), "roboto-regular").deriveFont(20f));
     layout.setConstraints(_searchButton, constraints);
-    _searchButton.addActionListener(e -> {
+    _searchButton.addActionListener((ActionEvent e) -> {
       if(keywordField.getText().isEmpty()) {
         JOptionPane.showMessageDialog(null, "Error: keyword is missing");
       } else {
-        System.out.println(keywordField.getText());
-        System.out.println(categoryChoices.getSelectedItem());
-        if(repoCheckbox.isSelected()) {
-          System.out.println(repoOperatorChoices.getSelectedItem() + " " + repoField.getValue());
-        }
-        if(followersCheckbox.isSelected()) {
-          System.out.println(followersOperatorChoices.getSelectedItem() + " " + followersField.getValue());
-        }
+        controller.keyword = keywordField.getText();
+        controller.type = categoryChoices.getSelectedIndex();
+        controller.repoUsed = repoCheckbox.isSelected();
+        controller.repoBoundOperator = (String) repoOperatorChoices.getSelectedItem();
+        controller.repoBoundNumber = (Integer) repoField.getValue();
+        controller.followersUsed = followersCheckbox.isSelected();
+        controller.followersBoundOperator = (String) followersOperatorChoices.getSelectedItem();
+        controller.followersBoundNumber = (Integer) followersField.getValue();
+        controller.searchUsers();
+        formFilled = true;
       }
     });
     searchButton = _searchButton;
