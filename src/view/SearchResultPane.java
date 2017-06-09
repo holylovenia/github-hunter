@@ -30,8 +30,6 @@ public class SearchResultPane extends JScrollPane implements ListSelectionListen
     listModel = new DefaultListModel();
     usersList = new JList(listModel);
     usersList.setCellRenderer(new SearchResultListRenderer());
-    usersList.setVisibleRowCount(36);
-    usersList.setLayoutOrientation(JList.HORIZONTAL_WRAP);
     usersList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
     usersList.addListSelectionListener(this);
     setVerticalScrollBarPolicy(VERTICAL_SCROLLBAR_ALWAYS);

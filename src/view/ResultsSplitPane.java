@@ -9,6 +9,7 @@ import javax.swing.JSplitPane;
 public class ResultsSplitPane extends JSplitPane {
   private final int RESULTS_SPLIT_PANE_WIDTH = 1800;
   private final int RESULTS_SPLIT_PANE_HEIGHT = 620;
+  private final int dividerLocation = 600;
   private SearchResultPane searchResultPane;
   private RepositoriesPane repositoriesPane;
 
@@ -20,8 +21,16 @@ public class ResultsSplitPane extends JSplitPane {
     setLeftComponent(searchResultPane);
     setRightComponent(repositoriesPane);
     setOneTouchExpandable(false);
-    setDividerLocation(492);
+    setDividerLocation(dividerLocation);
     setPreferredSize(new Dimension(RESULTS_SPLIT_PANE_WIDTH, RESULTS_SPLIT_PANE_HEIGHT));
+  }
+
+  public int getDividerLocation() {
+    return dividerLocation;
+  }
+
+  public int getLastDividerLocation() {
+    return dividerLocation;
   }
 
   public SearchResultPane getSearchResultPane() {
