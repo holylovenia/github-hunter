@@ -55,6 +55,10 @@ public class User {
     fullname = _fullname;
   }
 
+  public Repository[] getRepositories() {
+    return repositories;
+  }
+
   public Repository getRepository(int index) {
     return repositories[index];
   }

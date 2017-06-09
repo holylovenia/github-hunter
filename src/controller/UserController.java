@@ -110,6 +110,10 @@ public class UserController {
     return user.getFullname();
   }
 
+  public Repository[] getRepositories() {
+    return user.getRepositories();
+  }
+
   public Repository getRepository(int index) {
     return user.getRepository(index);
   }

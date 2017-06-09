@@ -1,7 +1,8 @@
 package view;
 
+import controller.GitHubHunterController;
+import controller.SearchController;
 import controller.UserController;
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -11,66 +12,63 @@ import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JList;
-import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
-import javax.swing.ScrollPaneConstants;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 
 /**
  * Created by Holy on 09-Jun-17.
  */
-public class SearchResultPanel extends JPanel {
-
-  private final int SEARCH_RESULT_WIDTH = 1800;
-  private final int SEARCH_RESULT_HEIGHT = 620;
+public class SearchResultPanel extends JScrollPane implements ListSelectionListener {
   private JList usersList;
   private DefaultListModel listModel;
-
+  private GitHubHunterController controller;
 
   public SearchResultPanel() {
-    setBackground(Color.WHITE);
-    setPreferredSize(new Dimension(SEARCH_RESULT_WIDTH, SEARCH_RESULT_HEIGHT));
+    super();
     listModel = new DefaultListModel();
     usersList = new JList(listModel);
     usersList.setCellRenderer(new SearchResultListRenderer());
     usersList.setVisibleRowCount(36);
     usersList.setLayoutOrientation(JList.HORIZONTAL_WRAP);
-    usersList.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-    JScrollPane jScrollPane = new JScrollPane(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS,
-        ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-    jScrollPane.setPreferredSize(new Dimension(500, 550));
-    jScrollPane.setViewportView(usersList);
-    add(jScrollPane, BorderLayout.EAST);
-    //add(usersList);
+    usersList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+    usersList.addListSelectionListener(this);
+    setVerticalScrollBarPolicy(VERTICAL_SCROLLBAR_ALWAYS);
+    setHorizontalScrollBarPolicy(HORIZONTAL_SCROLLBAR_NEVER);
+    setPreferredSize(new Dimension(489, 550));
+    setViewportView(usersList);
   }
 
-  public static void main(String[] args) {
-    //frame.dispose();
+  public void valueChanged(ListSelectionEvent e) {
+    int selectedIndex = usersList.getSelectedIndex();
+    UserController user = SearchController.getSearchResult(selectedIndex);
+    if (user.getRepositories().length != user.getRepositoriesCount()) {
+      user.setRepositories();
+    }
+    controller.getRepositoriesPane().updateRepositories(user.getRepositories());
   }
 
-  public void updateWithResults(UserController[] users) {
+  public void setController(GitHubHunterController _controller) {
+    controller = _controller;
+  }
+
+  public void updateResults(UserController[] users) {
     listModel.clear();
-    //userLabels = new SearchResultListRenderer[users.length];
     for (int i = 0; i < users.length; i++) {
       listModel.addElement(users[i]);
-      //userLabels[i] = new SearchResultListRenderer(users[i]);
     }
     usersList.setModel(listModel);
-    //usersList = new JList(userLabels);
-    //add(usersList);
   }
 
   private class SearchResultListRenderer extends DefaultListCellRenderer {
 
     private final int AVATAR_WIDTH = 150;
     private final int AVATAR_HEIGHT = 150;
-    private Color textSelectionColor = Color.BLACK;
-    private Color backgroundSelectionColor = Color.CYAN;
-    private Color textNonSelectionColor = Color.BLACK;
-    private Color backgroundNonSelectionColor = Color.WHITE;
-
-    public SearchResultListRenderer() {
-    }
+    private final Color textSelectionColor = Color.BLACK;
+    private final Color backgroundSelectionColor = Color.CYAN;
+    private final Color textNonSelectionColor = Color.BLACK;
+    private final Color backgroundNonSelectionColor = Color.WHITE;
 
     public Component getListCellRendererComponent(JList list, Object value, int index,
         boolean selected, boolean expanded) {
@@ -90,6 +88,7 @@ public class SearchResultPanel extends JPanel {
         label.setBackground(backgroundNonSelectionColor);
         label.setForeground(textNonSelectionColor);
       }
+      label.setOpaque(true);
       return label;
     }
 
