@@ -1,13 +1,17 @@
 package controller;
 
-import static java.awt.GridBagConstraints.BOTH;
+import static java.awt.GridBagConstraints.NONE;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 import view.FormPanel;
-import view.SearchResultPanel;
+import view.RepositoriesPane;
+import view.ResultsSplitPane;
+import view.SearchResultPane;
+import view.SearchScreen;
+import view.StartScreen;
 
 /**
  * Created by Holy on 09-Jun-17.
@@ -22,50 +26,42 @@ public class GitHubHunterController {
   public static boolean followersUsed;
   public static String followersBoundOperator;
   public static int followersBoundNumber;
-  private FormPanel formPanel;
-  private SearchResultPanel searchResultPanel;
+  private StartScreen startScreen;
+  private SearchScreen searchScreen;
 
   public GitHubHunterController() {
-    JFrame frame = new JFrame();
-    frame.setTitle("Form");
-    frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-    GridBagLayout layout = new GridBagLayout();
-    frame.setLayout(layout);
-    GridBagConstraints constraints = new GridBagConstraints();
-    constraints.fill = BOTH;
-    formPanel = new FormPanel();
-    constraints.gridx = 0;
-    constraints.gridy = 0;
-    layout.setConstraints(formPanel, constraints);
-    frame.add(formPanel);
-    searchResultPanel = new SearchResultPanel();
-    constraints.gridx = 0;
-    constraints.gridy = 1;
-    layout.setConstraints(searchResultPanel, constraints);
-    frame.add(searchResultPanel);
-    frame.pack();
-    frame.setVisible(true);
+    startScreen = new StartScreen();
+    searchScreen = new SearchScreen();
   }
 
   public void searchUsers() {
     SearchController searchController = new SearchController(type, keyword, repoUsed,
         repoBoundOperator, repoBoundNumber, followersUsed, followersBoundOperator,
         followersBoundNumber);
-    searchResultPanel.updateWithResults(searchController.getSearchResults());
+    searchScreen.getResultsSplitPane().getSearchResultPane().updateResults(searchController.getSearchResults());
     System.out.println("SELESAI");
   }
 
-  public FormPanel getFormPanel() {
-    return formPanel;
+  public StartScreen getStartScreen() {
+    return startScreen;
   }
 
-  public SearchResultPanel getSearchResultPanel() {
-    return searchResultPanel;
+  public SearchScreen getSearchScreen() {
+    return searchScreen;
   }
 
   public static void main(String[] args) {
     GitHubHunterController controller = new GitHubHunterController();
-    controller.getFormPanel().setController(controller);
+    controller.getStartScreen().setVisible(true);
+    try {
+      Thread.sleep(3000);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+    controller.getStartScreen().dispose();
+    controller.getSearchScreen().setVisible(true);
+    controller.getSearchScreen().getFormPanel().setController(controller);
+    controller.getSearchScreen().getResultsSplitPane().getSearchResultPane().setController(controller);
   }
 
 }
