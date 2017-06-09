@@ -20,12 +20,12 @@ import javax.swing.event.ListSelectionListener;
 /**
  * Created by Holy on 09-Jun-17.
  */
-public class SearchResultPanel extends JScrollPane implements ListSelectionListener {
+public class SearchResultPane extends JScrollPane implements ListSelectionListener {
   private JList usersList;
   private DefaultListModel listModel;
   private GitHubHunterController controller;
 
-  public SearchResultPanel() {
+  public SearchResultPane() {
     super();
     listModel = new DefaultListModel();
     usersList = new JList(listModel);
@@ -36,17 +36,17 @@ public class SearchResultPanel extends JScrollPane implements ListSelectionListe
     usersList.addListSelectionListener(this);
     setVerticalScrollBarPolicy(VERTICAL_SCROLLBAR_ALWAYS);
     setHorizontalScrollBarPolicy(HORIZONTAL_SCROLLBAR_NEVER);
-    setPreferredSize(new Dimension(489, 550));
+    setPreferredSize(new Dimension(490, 550));
     setViewportView(usersList);
   }
 
   public void valueChanged(ListSelectionEvent e) {
     int selectedIndex = usersList.getSelectedIndex();
     UserController user = SearchController.getSearchResult(selectedIndex);
-    if (user.getRepositories().length != user.getRepositoriesCount()) {
+    if (((user.getRepositories() == null) &&  (user.getRepositoriesCount() > 0)) || ((user.getRepositories() != null) && (user.getRepositories().length != user.getRepositoriesCount()))) {
       user.setRepositories();
     }
-    controller.getRepositoriesPane().updateRepositories(user.getRepositories());
+    controller.getSearchScreen().getResultsSplitPane().getRepositoriesPane().updateRepositories(user.getRepositories());
   }
 
   public void setController(GitHubHunterController _controller) {
@@ -65,8 +65,8 @@ public class SearchResultPanel extends JScrollPane implements ListSelectionListe
 
     private final int AVATAR_WIDTH = 150;
     private final int AVATAR_HEIGHT = 150;
-    private final Color textSelectionColor = Color.BLACK;
-    private final Color backgroundSelectionColor = Color.CYAN;
+    private final Color textSelectionColor = Color.WHITE;
+    private final Color backgroundSelectionColor = Color.BLACK;
     private final Color textNonSelectionColor = Color.BLACK;
     private final Color backgroundNonSelectionColor = Color.WHITE;
 
