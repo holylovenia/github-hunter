@@ -1,5 +1,6 @@
 package controller;
 
+import view.DisclaimerScreen;
 import view.ProcessedAsset;
 import view.SearchScreen;
 import view.StartScreen;
@@ -18,29 +19,42 @@ public class GitHubHunterController {
   public static String followersBoundOperator;
   public static int followersBoundNumber;
   private StartScreen startScreen;
+  private DisclaimerScreen disclaimerScreen;
   private SearchScreen searchScreen;
 
   public GitHubHunterController() {
     ProcessedAsset processedAsset = new ProcessedAsset();
     startScreen = new StartScreen();
+    disclaimerScreen = new DisclaimerScreen();
     searchScreen = new SearchScreen();
+    showGitHubHunter();
+    setUpController();
   }
 
-  public static void main(String[] args) {
-    GitHubHunterController controller = new GitHubHunterController();
-    controller.getStartScreen().setVisible(true);
+  public void showGitHubHunter() {
+    startScreen.setVisible(true);
     try {
       Thread.sleep(3000);
     } catch (InterruptedException e) {
       e.printStackTrace();
     }
-    controller.getStartScreen().dispose();
-    controller.getSearchScreen().setVisible(true);
-    controller.getSearchScreen().getFormPanel().setController(controller);
-    controller.getSearchScreen().getResultsSplitPane().getSearchResultPane()
-        .setController(controller);
-    controller.getSearchScreen().getResultsSplitPane().getRepositoriesPane()
-        .setController(controller);
+    startScreen.dispose();
+    disclaimerScreen.setVisible(true);
+    try {
+      Thread.sleep(5000);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+    disclaimerScreen.dispose();
+    searchScreen.setVisible(true);
+  }
+
+  public void setUpController() {
+    searchScreen.getFormPanel().setController(this);
+    searchScreen.getResultsSplitPane().getSearchResultPane()
+        .setController(this);
+    searchScreen.getResultsSplitPane().getRepositoriesPane()
+        .setController(this);
   }
 
   public void searchUsers() {
@@ -48,13 +62,17 @@ public class GitHubHunterController {
         repoBoundOperator, repoBoundNumber, followersUsed, followersBoundOperator,
         followersBoundNumber);
     searchScreen.getResultsSplitPane().getSearchResultPane()
-        .updateResults(searchController.getSearchResults());
+        .updateResults(SearchController.getSearchResults());
     searchScreen.showResultsCountDialog();
     System.out.println("SELESAI");
   }
 
   public StartScreen getStartScreen() {
     return startScreen;
+  }
+
+  public DisclaimerScreen getDisclaimerScreen() {
+    return disclaimerScreen;
   }
 
   public SearchScreen getSearchScreen() {
