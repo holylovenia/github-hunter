@@ -31,12 +31,12 @@ public class DisclaimerScreen extends JFrame {
   /**
    * Determines width of the screen.
    */
-  private final int SCREEN_WIDTH = 1800;
+  private final int screenWidth = 1800;
 
   /**
    * Determines height of the screen.
    */
-  private final int SCREEN_HEIGHT = 900;
+  private final int screenHeight = 900;
 
   /**
    * Instantiation of <code>DisclaimerPanel</code>.
@@ -95,7 +95,7 @@ public class DisclaimerScreen extends JFrame {
      * Prepares components and attributes of the panel.
      */
     public void setUpDisclaimerPanel() {
-      setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
+      setPreferredSize(new Dimension(screenWidth, screenHeight));
       setBackground(Color.WHITE);
       layout = new GridBagLayout();
       setLayout(layout);
@@ -168,7 +168,8 @@ public class DisclaimerScreen extends JFrame {
       contentLabel = new JLabel();
       String htmlText =
           "<html><p align=\"right\">All images are obtained from Google.<br>GitHub Hunter is not "
-              + "commercially associated with GitHub.<br><br>Created by <b>Holy Lovenia</b>.</p></html>";
+              + "commercially associated with GitHub.<br><br>Created by <b>Holy Lovenia</b>.</p>"
+              + "</html>";
       contentLabel.setText(htmlText);
       contentLabel.setFont(ProcessedAsset.openSansItalic.deriveFont(40f));
       layout.setConstraints(contentLabel, constraints);

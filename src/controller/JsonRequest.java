@@ -18,7 +18,8 @@ public class JsonRequest {
   /**
    * Encrypted token used for authenticated access.
    */
-  private final String token = "9bm3nqJ2RZi90Z6L6Cu1qvvKuxlxILBEgBMFtQaDp+VFGq+pewXhRypHA5ZDEUqVCjFmEDrnOg4=";
+  private final String token = "9bm3nqJ2RZi90Z6L6Cu1qvvKuxlxILBEgBMFtQaDp+VFG"
+      + "q+pewXhRypHA5ZDEUqVCjFmEDrnOg4=";
 
   /**
    * Response message retrieved from the connection.

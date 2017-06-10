@@ -52,12 +52,12 @@ public final class ProcessedAsset {
    *
    * <p>Static method to retrieve image.</p>
    *
-   * @param _class Class which requests the image
-   * @param _imagePath Relative image path
-   * @return Image from <code>_imagePath</code>
+   * @param requesterClass Class which requests the image
+   * @param imagePath Relative image path
+   * @return Image from <code>imagePath</code>
    */
-  public static Image getImage(Class _class, String _imagePath) {
-    URL imgPath = _class.getResource(_imagePath);
+  public static Image getImage(Class requesterClass, String imagePath) {
+    URL imgPath = requesterClass.getResource(imagePath);
     ImageIcon imageIcon = new ImageIcon(imgPath);
     Image image = imageIcon.getImage();
     return image;
@@ -107,15 +107,16 @@ public final class ProcessedAsset {
    *
    * <p>Static method to retrieve specified font.</p>
    *
-   * @param _class Class which requests the image
-   * @param _fontName Name of the font
+   * @param requesterClass Class which requests the image
+   * @param fontName Name of the font
    * @return Specified font
    */
-  public static Font getFont(Class _class, String _fontName) {
+  public static Font getFont(Class requesterClass, String fontName) {
     Font chosenFont = null;
     try {
       chosenFont = Font.createFont(Font.TRUETYPE_FONT,
-          _class.getResource("\\assets\\font\\" + _fontName.toLowerCase() + ".ttf").openStream());
+          requesterClass.getResource("\\assets\\font\\" + fontName.toLowerCase() + ".ttf")
+              .openStream());
     } catch (FontFormatException e) {
       e.printStackTrace();
     } catch (IOException e) {

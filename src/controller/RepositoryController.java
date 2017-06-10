@@ -28,9 +28,9 @@ public class RepositoryController {
   /**
    * Constructor.
    *
-   * <p>Initializes <code>repositoryJsonObj</code> with element in <code>repositoriesJsonArray</code>
-   * at <code>index</code> position. Constructs <code>repo</code> and set the attributes of it
-   * according to data from <code>repositoryJsonObj</code>.</p>
+   * <p>Initializes <code>repositoryJsonObj</code> with element in <code>repositoriesJsonArray
+   * </code> at <code>index</code> position. Constructs <code>repo</code> and set the
+   * attributes of it according to data from <code>repositoryJsonObj</code>.</p>
    *
    * @param repositoriesJsonArray Contains JSON Data for all repositories the user has.
    * @param index Determines the position of specified element.
@@ -47,8 +47,8 @@ public class RepositoryController {
    * Initializes the repository name with JSON data retrieved from <code>repositoryJsonObj</code>.
    */
   public void setName() {
-    String _name = repositoryJsonObj.getString("name");
-    repo.setName(_name);
+    String name = repositoryJsonObj.getString("name");
+    repo.setName(name);
   }
 
   /**
@@ -58,8 +58,8 @@ public class RepositoryController {
   public void setDescription() {
     if (!(repositoryJsonObj.isNull("description") || repositoryJsonObj.getString("description")
         .equals(""))) {
-      String _description = repositoryJsonObj.getString("description");
-      repo.setDescription(_description);
+      String description = repositoryJsonObj.getString("description");
+      repo.setDescription(description);
     }
   }
 
@@ -68,8 +68,8 @@ public class RepositoryController {
    * <code>repositoryJsonObj</code>.
    */
   public void setUrl() {
-    String _url = repositoryJsonObj.getString("html_url");
-    repo.setUrl(_url);
+    String url = repositoryJsonObj.getString("html_url");
+    repo.setUrl(url);
   }
 
   /**

@@ -20,12 +20,12 @@ public class StartScreen extends JFrame {
   /**
    * Determines width of the frame.
    */
-  private final int SCREEN_WIDTH = 1800;
+  private final int screenWidth = 1800;
 
   /**
    * Determines height of the frame.
    */
-  private final int SCREEN_HEIGHT = 900;
+  private final int screenHeight = 900;
 
   /**
    * Instantiation of <code>StartPanel</code>.
@@ -59,7 +59,7 @@ public class StartScreen extends JFrame {
      * Prepares and paints panel.
      */
     public void setUpStartPanel() {
-      setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
+      setPreferredSize(new Dimension(screenWidth, screenHeight));
       setBackground(Color.WHITE);
       repaint();
     }

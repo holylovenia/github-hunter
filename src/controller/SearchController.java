@@ -34,25 +34,24 @@ public class SearchController {
    * <p>Constructs <code>search</code>. Sets the parameters as the attributes of
    * <code>search</code>. Generates search results.</p>
    *
-   * @param _category Restricts search into certain fields.
-   * @param _query Contains keyword used for searching.
-   * @param _repoUsed Determines whether the repository filter will be used in searching or not.
-   * @param _repoBoundOperator Determines what mathematical operator used to filter repositories.
-   * @param _repoBoundNumber Determines limit of the repository filter.
-   * @param _followersUsed Determines whether the followers filter will be used in searching or
-   * not.
-   * @param _followersBoundOperator Determines what mathematical operator used to filter followers.
-   * @param _followersBoundNumber Determines limit of the followers filter.
+   * @param category Restricts search into certain fields.
+   * @param query Contains keyword used for searching.
+   * @param repoUsed Determines whether the repository filter will be used in searching or not.
+   * @param repoBoundOperator Determines what mathematical operator used to filter repositories.
+   * @param repoBoundNumber Determines limit of the repository filter.
+   * @param followersUsed Determines the usage of followers filter in searching.
+   * @param followersBoundOperator Determines what mathematical operator used to filter followers.
+   * @param followersBoundNumber Determines limit of the followers filter.
    */
-  public SearchController(int _category, String _query, boolean _repoUsed,
-      String _repoBoundOperator,
-      int _repoBoundNumber, boolean _followersUsed, String _followersBoundOperator,
-      int _followersBoundNumber) {
+  public SearchController(int category, String query, boolean repoUsed,
+      String repoBoundOperator,
+      int repoBoundNumber, boolean followersUsed, String followersBoundOperator,
+      int followersBoundNumber) {
     search = new Search();
-    search.setCategory(_category);
-    search.setQuery(_query);
-    search.setRepositoriesFilter(_repoUsed, _repoBoundOperator, _repoBoundNumber);
-    search.setFollowersFilter(_followersUsed, _followersBoundOperator, _followersBoundNumber);
+    search.setCategory(category);
+    search.setQuery(query);
+    search.setRepositoriesFilter(repoUsed, repoBoundOperator, repoBoundNumber);
+    search.setFollowersFilter(followersUsed, followersBoundOperator, followersBoundNumber);
     search.generateSearchUrl();
     setSearchResults();
   }

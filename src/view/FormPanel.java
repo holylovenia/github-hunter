@@ -36,12 +36,12 @@ public class FormPanel extends JPanel {
   /**
    * Determines width of the panel.
    */
-  private final int FORM_WIDTH = 1800;
+  private final int formWidth = 1800;
 
   /**
    * Determines height of the panel.
    */
-  private final int FORM_HEIGHT = 280;
+  private final int formHeight = 280;
 
   /**
    * Determines text color of the components in panel.
@@ -142,7 +142,7 @@ public class FormPanel extends JPanel {
    * <code>constraints</code>. Creates and adds components needed to panel.</p>
    */
   public FormPanel() {
-    setPreferredSize(new Dimension(FORM_WIDTH, FORM_HEIGHT));
+    setPreferredSize(new Dimension(formWidth, formHeight));
     setBackground(backgroundColor);
     layout = new GridBagLayout();
     setLayout(layout);
@@ -155,12 +155,12 @@ public class FormPanel extends JPanel {
   /**
    * Setter for <code>controller</code>.
    *
-   * <p>Initializes <code>controller</code> with <code>_controller</code>.</p>
+   * <p>Initializes <code>controller</code> with <code>controller</code>.</p>
    *
-   * @param _controller Controls GUI and search data flow.
+   * @param controller Controls GUI and search data flow.
    */
-  public void setController(GitHubHunterController _controller) {
-    controller = _controller;
+  public void setController(GitHubHunterController controller) {
+    this.controller = controller;
   }
 
   /**
@@ -269,15 +269,15 @@ public class FormPanel extends JPanel {
     constraints.fill = REMAINDER;
     constraints.insets = new Insets(0, 0, 0, -150);
     String[] choices = {"All", "Username", "E-mail", "Full name"};
-    JComboBox _categoryChoices = new JComboBox(choices);
+    JComboBox categoryChoices = new JComboBox(choices);
     DefaultListCellRenderer listCellRenderer = new DefaultListCellRenderer();
     listCellRenderer.setHorizontalAlignment(DefaultListCellRenderer.CENTER);
-    _categoryChoices.setRenderer(listCellRenderer);
-    _categoryChoices.setPrototypeDisplayValue("123456789012345678901234567890123456");
-    _categoryChoices.setFont(ProcessedAsset.robotoRegular.deriveFont(20f));
-    _categoryChoices.setSelectedIndex(0);
-    layout.setConstraints(_categoryChoices, constraints);
-    categoryChoices = _categoryChoices;
+    categoryChoices.setRenderer(listCellRenderer);
+    categoryChoices.setPrototypeDisplayValue("123456789012345678901234567890123456");
+    categoryChoices.setFont(ProcessedAsset.robotoRegular.deriveFont(20f));
+    categoryChoices.setSelectedIndex(0);
+    layout.setConstraints(categoryChoices, constraints);
+    this.categoryChoices = categoryChoices;
   }
 
   /**
@@ -303,12 +303,12 @@ public class FormPanel extends JPanel {
     constraints.gridy = 3;
     constraints.fill = NONE;
     constraints.insets = new Insets(0, 0, 0, 0);
-    JCheckBox _repoCheckbox = new JCheckBox("Repository: ");
-    _repoCheckbox.setFont(ProcessedAsset.robotoRegular.deriveFont(20f));
-    _repoCheckbox.setForeground(foregroundColor);
-    _repoCheckbox.setBackground(backgroundColor);
-    layout.setConstraints(_repoCheckbox, constraints);
-    repoCheckbox = _repoCheckbox;
+    JCheckBox repoCheckbox = new JCheckBox("Repository: ");
+    repoCheckbox.setFont(ProcessedAsset.robotoRegular.deriveFont(20f));
+    repoCheckbox.setForeground(foregroundColor);
+    repoCheckbox.setBackground(backgroundColor);
+    layout.setConstraints(repoCheckbox, constraints);
+    this.repoCheckbox = repoCheckbox;
   }
 
   /**
@@ -338,15 +338,15 @@ public class FormPanel extends JPanel {
     constraints.gridy = 3;
     constraints.fill = RELATIVE;
     constraints.insets = new Insets(0, -495, 0, 0);
-    JFormattedTextField _repoField = new JFormattedTextField();
-    _repoField.setColumns(20);
+    JFormattedTextField repoField = new JFormattedTextField();
+    repoField.setColumns(20);
     int repo = 0;
-    _repoField.setValue(new Integer(repo));
-    _repoField.setFont(ProcessedAsset.openSansItalic.deriveFont(20f));
-    _repoField
+    repoField.setValue(new Integer(repo));
+    repoField.setFont(ProcessedAsset.openSansItalic.deriveFont(20f));
+    repoField
         .setToolTipText("Fill it with integer, otherwise it will be automatically filled by 0");
-    layout.setConstraints(_repoField, constraints);
-    repoField = _repoField;
+    layout.setConstraints(repoField, constraints);
+    this.repoField = repoField;
   }
 
   /**
@@ -357,12 +357,12 @@ public class FormPanel extends JPanel {
     constraints.gridy = 3;
     constraints.fill = RELATIVE;
     constraints.insets = new Insets(0, -190, 0, 0);
-    JCheckBox _followersCheckbox = new JCheckBox("Followers: ");
-    _followersCheckbox.setFont(ProcessedAsset.robotoRegular.deriveFont(20f));
-    _followersCheckbox.setForeground(foregroundColor);
-    _followersCheckbox.setBackground(backgroundColor);
-    layout.setConstraints(_followersCheckbox, constraints);
-    followersCheckbox = _followersCheckbox;
+    JCheckBox followersCheckbox = new JCheckBox("Followers: ");
+    followersCheckbox.setFont(ProcessedAsset.robotoRegular.deriveFont(20f));
+    followersCheckbox.setForeground(foregroundColor);
+    followersCheckbox.setBackground(backgroundColor);
+    layout.setConstraints(followersCheckbox, constraints);
+    this.followersCheckbox = followersCheckbox;
   }
 
   /**
@@ -394,15 +394,15 @@ public class FormPanel extends JPanel {
     constraints.gridy = 3;
     constraints.fill = REMAINDER;
     constraints.insets = new Insets(0, -190, 0, 0);
-    JFormattedTextField _followersField = new JFormattedTextField();
-    _followersField.setColumns(20);
+    JFormattedTextField followersField = new JFormattedTextField();
+    followersField.setColumns(20);
     int followers = 0;
-    _followersField.setValue(new Integer(followers));
-    _followersField.setFont(ProcessedAsset.openSansItalic.deriveFont(20f));
-    _followersField
+    followersField.setValue(new Integer(followers));
+    followersField.setFont(ProcessedAsset.openSansItalic.deriveFont(20f));
+    followersField
         .setToolTipText("Fill it with integer, otherwise it will be automatically filled by 0");
-    layout.setConstraints(_followersField, constraints);
-    followersField = _followersField;
+    layout.setConstraints(followersField, constraints);
+    this.followersField = followersField;
   }
 
   /**
@@ -416,10 +416,10 @@ public class FormPanel extends JPanel {
     constraints.insets = new Insets(30, 0, 0, -1250);
     ImageIcon searchIcon = new ImageIcon(
         ProcessedAsset.getImage(getClass(), "\\assets\\search.png"));
-    JButton _searchButton = new JButton(searchIcon);
-    _searchButton.setFont(ProcessedAsset.robotoRegular.deriveFont(20f));
-    layout.setConstraints(_searchButton, constraints);
-    _searchButton.addActionListener((ActionEvent e) -> {
+    JButton searchButton = new JButton(searchIcon);
+    searchButton.setFont(ProcessedAsset.robotoRegular.deriveFont(20f));
+    layout.setConstraints(searchButton, constraints);
+    searchButton.addActionListener((ActionEvent e) -> {
       if (keywordField.getText().isEmpty()) {
         JOptionPane.showMessageDialog(null, "Error: keyword is missing");
       } else {
@@ -434,6 +434,6 @@ public class FormPanel extends JPanel {
         controller.searchUsers();
       }
     });
-    searchButton = _searchButton;
+    this.searchButton = searchButton;
   }
 }

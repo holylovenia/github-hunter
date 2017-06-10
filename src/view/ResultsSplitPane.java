@@ -15,12 +15,12 @@ public class ResultsSplitPane extends JSplitPane {
   /**
    * Determines width of the split pane.
    */
-  private final int RESULTS_SPLIT_PANE_WIDTH = 1800;
+  private final int resultsSplitPaneWidth = 1800;
 
   /**
    * Determines height of the split pane.
    */
-  private final int RESULTS_SPLIT_PANE_HEIGHT = 620;
+  private final int resultsSplitPaneHeight = 620;
 
   /**
    * Determines the location of split pane divider.
@@ -28,14 +28,14 @@ public class ResultsSplitPane extends JSplitPane {
   private final int dividerLocation = 600;
 
   /**
-   * Instantiation of <code>SearchResultPane</code>
+   * Instantiation of <code>SearchResultPane</code>.
    *
    * @see SearchResultPane
    */
   private SearchResultPane searchResultPane;
 
   /**
-   * Instantiation of <code>RepositoriesPane</code>
+   * Instantiation of <code>RepositoriesPane</code>.
    *
    * @see RepositoriesPane
    */
@@ -55,7 +55,7 @@ public class ResultsSplitPane extends JSplitPane {
     setRightComponent(repositoriesPane);
     setOneTouchExpandable(false);
     setDividerLocation(dividerLocation);
-    setPreferredSize(new Dimension(RESULTS_SPLIT_PANE_WIDTH, RESULTS_SPLIT_PANE_HEIGHT));
+    setPreferredSize(new Dimension(resultsSplitPaneWidth, resultsSplitPaneHeight));
   }
 
   /**
@@ -79,7 +79,7 @@ public class ResultsSplitPane extends JSplitPane {
   }
 
   /**
-   * Getter for <code>searchResultPane</code>
+   * Getter for <code>searchResultPane</code>.
    *
    * @return Attribute <code>searchResultPane</code>
    */
@@ -88,7 +88,7 @@ public class ResultsSplitPane extends JSplitPane {
   }
 
   /**
-   * Getter for <code>repositoriesPane</code>
+   * Getter for <code>repositoriesPane</code>.
    *
    * @return Attribute <code>repositoriesPane</code>
    */

@@ -43,34 +43,34 @@ public class Filter {
   /**
    * Setter for filter.
    *
-   * <p>Initializes <code>used</code> with <code>_used</code>, <code>boundOperator</code> with
-   * <code>_boundOperator</code>, and <code>boundNumber</code> with <code>_boundNumber</code>.</p>
+   * <p>Initializes <code>used</code> with <code>used</code>, <code>boundOperator</code> with
+   * <code>boundOperator</code>, and <code>boundNumber</code> with <code>boundNumber</code>.</p>
    *
-   * @param _used Determines whether the filter will be used in searching or not.
-   * @param _boundOperator Determines what mathematical operator used to filter.
-   * @param _boundNumber Determines limit of the filter.
+   * @param used Determines whether the filter will be used in searching or not.
+   * @param boundOperator Determines what mathematical operator used to filter.
+   * @param boundNumber Determines limit of the filter.
    */
-  public void setFilter(boolean _used, String _boundOperator, int _boundNumber) {
-    used = _used;
-    if (isBoundOperatorValid(_boundOperator)) {
-      boundOperator = _boundOperator;
+  public void setFilter(boolean used, String boundOperator, int boundNumber) {
+    this.used = used;
+    if (isBoundOperatorValid(boundOperator)) {
+      this.boundOperator = boundOperator;
     } else {
-      boundOperator = "<=";
+      this.boundOperator = "<=";
     }
-    boundNumber = _boundNumber;
+    this.boundNumber = boundNumber;
   }
 
   /**
    * Validation for bound operator.
    *
-   * <p>Examines whether <code>_boundOperator</code> is a suitable mathematical operator or not.</p>
+   * <p>Examines whether <code>operator</code> is a suitable mathematical operator or not.</p>
    *
-   * @param _boundOperator Determines what mathematical operator used to filter.
+   * @param operator Determines what mathematical operator used to filter.
    * @return <code>true</code> if suitable, otherwise <code>false</code>.
    */
-  public boolean isBoundOperatorValid(String _boundOperator) {
-    return (_boundOperator == "<" || _boundOperator == "<=" || _boundOperator == ">"
-        || _boundOperator == ">=");
+  public boolean isBoundOperatorValid(String operator) {
+    return (operator == "<" || operator == "<=" || operator == ">"
+        || operator == ">=");
   }
 
   /**

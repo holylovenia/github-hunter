@@ -39,23 +39,23 @@ public class UserController {
    * from specified URL. Initializes the attributes (except <code>repositories</code>) of user with
    * JSON data from <code>userJsonObj</code>.</p>
    *
-   * @param _username Determines username of the user.
+   * @param username Determines username of the user.
    */
-  public UserController(String _username) {
+  public UserController(String username) {
     user = new User();
-    JsonRequest userRequest = new JsonRequest(defaultUserUrl + _username);
+    JsonRequest userRequest = new JsonRequest(defaultUserUrl + username);
     userJsonObj = new JSONObject(userRequest.getRawJson());
-    initiate(_username);
+    initiate(username);
   }
 
   /**
    * <p>Initializes the attributes (except <code>repositories</code>) of user with
    * JSON data from <code>userJsonObj</code>.</p>
    *
-   * @param _username Determines username of the user.
+   * @param username Determines username of the user.
    */
-  public void initiate(String _username) {
-    setUsername(_username);
+  public void initiate(String username) {
+    setUsername(username);
     setAvatarUrl();
     setEmail();
     setFullname();
@@ -68,8 +68,8 @@ public class UserController {
    */
   public void setAvatarUrl() {
     if (!(userJsonObj.isNull("avatar_url") || userJsonObj.get("avatar_url").equals(""))) {
-      String _avatarUrl = userJsonObj.getString("avatar_url");
-      user.setAvatarUrl(_avatarUrl);
+      String avatarUrl = userJsonObj.getString("avatar_url");
+      user.setAvatarUrl(avatarUrl);
     }
   }
 
@@ -78,8 +78,8 @@ public class UserController {
    */
   public void setEmail() {
     if (!(userJsonObj.isNull("email") || userJsonObj.get("email").equals(""))) {
-      String _email = userJsonObj.getString("email");
-      user.setEmail(_email);
+      String email = userJsonObj.getString("email");
+      user.setEmail(email);
     }
   }
 
@@ -88,8 +88,8 @@ public class UserController {
    */
   public void setFullname() {
     if (!(userJsonObj.isNull("name") || userJsonObj.get("name").equals(""))) {
-      String _fullname = userJsonObj.getString("name");
-      user.setFullname(_fullname);
+      String fullname = userJsonObj.getString("name");
+      user.setFullname(fullname);
     }
   }
 
@@ -138,12 +138,12 @@ public class UserController {
   }
 
   /**
-   * Initializes username of user with <code>_username</code>.
+   * Initializes username of user with <code>username</code>.
    *
-   * @param _username Determines the username of user.
+   * @param username Determines the username of user.
    */
-  public void setUsername(String _username) {
-    user.setUsername(_username);
+  public void setUsername(String username) {
+    user.setUsername(username);
   }
 
   /**

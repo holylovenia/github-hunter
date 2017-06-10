@@ -65,29 +65,29 @@ public class Search {
   /**
    * Setter for repository filter.
    *
-   * <p>Initializes <code>used</code> with <code>_used</code>, <code>boundOperator</code> with
-   * <code>_boundOperator</code>, and <code>boundNumber</code> with <code>_boundNumber</code>.</p>
+   * <p>Initializes <code>used</code> with <code>used</code>, <code>boundOperator</code> with
+   * <code>boundOperator</code>, and <code>boundNumber</code> with <code>boundNumber</code>.</p>
    *
-   * @param _used Determines whether the repository filter will be used in searching or not.
-   * @param _boundOperator Determines what mathematical operator used to filter repositories.
-   * @param _boundNumber Determines limit of the repository filter.
+   * @param used Determines whether the repository filter will be used in searching or not.
+   * @param boundOperator Determines what mathematical operator used to filter repositories.
+   * @param boundNumber Determines limit of the repository filter.
    */
-  public void setRepositoriesFilter(boolean _used, String _boundOperator, int _boundNumber) {
-    repositoriesFilter.setFilter(_used, _boundOperator, _boundNumber);
+  public void setRepositoriesFilter(boolean used, String boundOperator, int boundNumber) {
+    repositoriesFilter.setFilter(used, boundOperator, boundNumber);
   }
 
   /**
    * Setter for followers filter.
    *
-   * <p>Initializes <code>used</code> with <code>_used</code>, <code>boundOperator</code> with
-   * <code>_boundOperator</code>, and <code>boundNumber</code> with <code>_boundNumber</code>.</p>
+   * <p>Initializes <code>used</code> with <code>used</code>, <code>boundOperator</code> with
+   * <code>boundOperator</code>, and <code>boundNumber</code> with <code>boundNumber</code>.</p>
    *
-   * @param _used Determines whether the followers filter will be used in searching or not.
-   * @param _boundOperator Determines what mathematical operator used to filter followers.
-   * @param _boundNumber Determines limit of the followers filter.
+   * @param used Determines whether the followers filter will be used in searching or not.
+   * @param boundOperator Determines what mathematical operator used to filter followers.
+   * @param boundNumber Determines limit of the followers filter.
    */
-  public void setFollowersFilter(boolean _used, String _boundOperator, int _boundNumber) {
-    followersFilter.setFilter(_used, _boundOperator, _boundNumber);
+  public void setFollowersFilter(boolean used, String boundOperator, int boundNumber) {
+    followersFilter.setFilter(used, boundOperator, boundNumber);
   }
 
   /**
@@ -136,15 +136,15 @@ public class Search {
   /**
    * Setter for <code>category</code>.
    *
-   * <p>Initializes <code>category</code> with <code>_category</code>.</p>
+   * <p>Initializes <code>category</code> with <code>category</code>.</p>
    *
-   * @param _category Restricts search into certain fields.
+   * @param category Restricts search into certain fields.
    */
-  public void setCategory(int _category) {
-    if ((_category > 0) && (_category <= 3)) {
-      category = _category;
+  public void setCategory(int category) {
+    if ((category > 0) && (category <= 3)) {
+      this.category = category;
     } else {
-      category = 0;
+      this.category = 0;
     }
   }
 
@@ -160,12 +160,12 @@ public class Search {
   /**
    * Setter for <code>query</code>.
    *
-   * <p>Initializes <code>query</code> with <code>_query</code>.</p>
+   * <p>Initializes <code>query</code> with <code>query</code>.</p>
    *
-   * @param _query Contains keyword used for searching.
+   * @param query Contains keyword used for searching.
    */
-  public void setQuery(String _query) {
-    query = _query;
+  public void setQuery(String query) {
+    this.query = query;
   }
 
   /**
@@ -198,11 +198,11 @@ public class Search {
   /**
    * Setter for <code>searchUrl</code>.
    *
-   * <p>Initializes <code>searchUrl</code> with <code>_searchUrl</code>.</p>
+   * <p>Initializes <code>searchUrl</code> with <code>searchUrl</code>.</p>
    *
-   * @param _searchUrl Determines URL used for searching with GitHub API.
+   * @param searchUrl Determines URL used for searching with GitHub API.
    */
-  public void setSearchUrl(String _searchUrl) {
-    searchUrl = _searchUrl;
+  public void setSearchUrl(String searchUrl) {
+    this.searchUrl = searchUrl;
   }
 }

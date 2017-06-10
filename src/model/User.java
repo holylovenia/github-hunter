@@ -78,12 +78,12 @@ public class User {
   /**
    * Setter for <code>avatarUrl</code>.
    *
-   * <p>Initializes <code>avatarUrl</code> with <code>_avatarUrl</code>.</p>
+   * <p>Initializes <code>avatarUrl</code> with <code>avatarUrl</code>.</p>
    *
-   * @param _avatarUrl Determines the avatar URL of user.
+   * @param avatarUrl Determines the avatar URL of user.
    */
-  public void setAvatarUrl(String _avatarUrl) {
-    avatarUrl = _avatarUrl;
+  public void setAvatarUrl(String avatarUrl) {
+    this.avatarUrl = avatarUrl;
   }
 
   /**
@@ -98,12 +98,12 @@ public class User {
   /**
    * Setter for <code>username</code>.
    *
-   * <p>Initializes <code>username</code> with <code>_username</code>.</p>
+   * <p>Initializes <code>username</code> with <code>username</code>.</p>
    *
-   * @param _username Determines the username of user.
+   * @param username Determines the username of user.
    */
-  public void setUsername(String _username) {
-    username = _username;
+  public void setUsername(String username) {
+    this.username = username;
   }
 
   /**
@@ -118,12 +118,12 @@ public class User {
   /**
    * Setter for <code>email</code>.
    *
-   * <p>Initializes <code>email</code> with <code>_email</code>.</p>
+   * <p>Initializes <code>email</code> with <code>email</code>.</p>
    *
-   * @param _email Determines the e-mail of user.
+   * @param email Determines the e-mail of user.
    */
-  public void setEmail(String _email) {
-    email = _email;
+  public void setEmail(String email) {
+    this.email = email;
   }
 
   /**
@@ -138,12 +138,12 @@ public class User {
   /**
    * Setter for <code>fullname</code>.
    *
-   * <p>Initializes <code>fullname</code> with <code>_fullname</code>.</p>
+   * <p>Initializes <code>fullname</code> with <code>fullname</code>.</p>
    *
-   * @param _fullname Determines the full name of user.
+   * @param fullname Determines the full name of user.
    */
-  public void setFullname(String _fullname) {
-    fullname = _fullname;
+  public void setFullname(String fullname) {
+    this.fullname = fullname;
   }
 
   /**
@@ -158,12 +158,12 @@ public class User {
   /**
    * Setter for <code>repositories</code>.
    *
-   * <p>Initializes <code>repositories</code> with <code>_repositories</code>.</p>
+   * <p>Initializes <code>repositories</code> with <code>repositories</code>.</p>
    *
-   * @param _repositories Contains the repositories owned by user.
+   * @param repositories Contains the repositories owned by user.
    */
-  public void setRepositories(ArrayList<Repository> _repositories) {
-    repositories = _repositories;
+  public void setRepositories(ArrayList<Repository> repositories) {
+    this.repositories = repositories;
   }
 
   /**
@@ -188,12 +188,12 @@ public class User {
   /**
    * Setter for <code>repositoriesCount</code>.
    *
-   * <p>Initializes <code>repositoriesCount</code> with <code>_repositoriesCount</code>.</p>
+   * <p>Initializes <code>repositoriesCount</code> with <code>repositoriesCount</code>.</p>
    *
-   * @param _repositoriesCount Determines the number of repositories owned by user.
+   * @param repositoriesCount Determines the number of repositories owned by user.
    */
-  public void setRepositoriesCount(int _repositoriesCount) {
-    repositoriesCount = _repositoriesCount;
+  public void setRepositoriesCount(int repositoriesCount) {
+    this.repositoriesCount = repositoriesCount;
   }
 
   /**
@@ -208,11 +208,11 @@ public class User {
   /**
    * Setter for <code>followers</code>.
    *
-   * <p>Initializes <code>followers</code> with <code>_followers</code>.</p>
+   * <p>Initializes <code>followers</code> with <code>followers</code>.</p>
    *
-   * @param _followers Determines the number of followers of user.
+   * @param followers Determines the number of followers of user.
    */
-  public void setFollowers(int _followers) {
-    followers = _followers;
+  public void setFollowers(int followers) {
+    this.followers = followers;
   }
 }

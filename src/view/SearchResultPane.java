@@ -85,12 +85,12 @@ public class SearchResultPane extends JScrollPane implements ListSelectionListen
   /**
    * Setter for <code>controller</code>.
    *
-   * <p>Initializes <code>controller</code> with <code>_controller</code>.</p>
+   * <p>Initializes <code>controller</code> with <code>controller</code>.</p>
    *
-   * @param _controller Controls GUI and search data flow.
+   * @param controller Controls GUI and search data flow.
    */
-  public void setController(GitHubHunterController _controller) {
-    controller = _controller;
+  public void setController(GitHubHunterController controller) {
+    this.controller = controller;
   }
 
   /**
@@ -107,7 +107,7 @@ public class SearchResultPane extends JScrollPane implements ListSelectionListen
   }
 
   /**
-   * Getter for <code>usersList</code>
+   * Getter for <code>usersList</code>.
    *
    * @return Attribute <code>usersList</code>
    */
@@ -123,12 +123,12 @@ public class SearchResultPane extends JScrollPane implements ListSelectionListen
     /**
      * Determines user avatar width.
      */
-    private final int AVATAR_WIDTH = 150;
+    private final int avatarWidth = 150;
 
     /**
      * Determines user avatar height.
      */
-    private final int AVATAR_HEIGHT = 150;
+    private final int avatarHeight = 150;
 
     /**
      * Determines the text color when selected.
@@ -167,8 +167,8 @@ public class SearchResultPane extends JScrollPane implements ListSelectionListen
       label.setText(getHtmlText(user));
       label.setFont(ProcessedAsset.robotoRegular.deriveFont(20f));
       label.setIcon(new ImageIcon(ProcessedAsset
-          .getScaledImage(ProcessedAsset.getImage(user.getAvatarUrl()), AVATAR_WIDTH,
-              AVATAR_HEIGHT)));
+          .getScaledImage(ProcessedAsset.getImage(user.getAvatarUrl()), avatarWidth,
+              avatarHeight)));
       label.setHorizontalAlignment(JLabel.LEFT);
       label.setBorder(BorderFactory.createLoweredSoftBevelBorder());
       if (selected) {

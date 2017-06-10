@@ -48,12 +48,12 @@ public class Repository {
   /**
    * Setter for <code>name</code>.
    *
-   * <p>Initializes <code>name</code> with <code>_name</code>.</p>
+   * <p>Initializes <code>name</code> with <code>name</code>.</p>
    *
-   * @param _name Determines the name of repository.
+   * @param name Determines the name of repository.
    */
-  public void setName(String _name) {
-    name = _name;
+  public void setName(String name) {
+    this.name = name;
   }
 
   /**
@@ -68,12 +68,12 @@ public class Repository {
   /**
    * Setter for <code>description</code>.
    *
-   * <p>Initializes <code>description</code> with <code>_description</code>.</p>
+   * <p>Initializes <code>description</code> with <code>description</code>.</p>
    *
-   * @param _description Contains the description of repository.
+   * @param description Contains the description of repository.
    */
-  public void setDescription(String _description) {
-    description = _description;
+  public void setDescription(String description) {
+    this.description = description;
   }
 
   /**
@@ -88,11 +88,11 @@ public class Repository {
   /**
    * Setter for <code>url</code>.
    *
-   * <p>Initializes <code>url</code> with <code>_url</code>.</p>
+   * <p>Initializes <code>url</code> with <code>url</code>.</p>
    *
-   * @param _url Contains the HTML URL of repository.
+   * @param url Contains the HTML URL of repository.
    */
-  public void setUrl(String _url) {
-    url = _url;
+  public void setUrl(String url) {
+    this.url = url;
   }
 }

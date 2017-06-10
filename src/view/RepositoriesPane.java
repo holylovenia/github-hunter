@@ -72,12 +72,12 @@ public class RepositoriesPane extends JScrollPane implements MouseListener {
   /**
    * Setter for <code>controller</code>.
    *
-   * <p>Initializes <code>controller</code> with <code>_controller</code>.</p>
+   * <p>Initializes <code>controller</code> with <code>controller</code>.</p>
    *
-   * @param _controller Controls GUI and search data flow.
+   * @param controller Controls GUI and search data flow.
    */
-  public void setController(GitHubHunterController _controller) {
-    controller = _controller;
+  public void setController(GitHubHunterController controller) {
+    this.controller = controller;
   }
 
   /**
