@@ -3,9 +3,11 @@ package view;
 import static java.awt.GridBagConstraints.BOTH;
 import static java.awt.GridBagConstraints.NONE;
 
+import controller.SearchController;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
 
 /**
@@ -52,6 +54,10 @@ public class SearchScreen extends JFrame {
     constraints.gridx = 0;
     constraints.gridy = 1;
     layout.setConstraints(resultsSplitPane, constraints);
+  }
+
+  public void showResultsCountDialog() {
+    JOptionPane.showMessageDialog(null, SearchController.getSearchResults().length + " users found", "Hunter's preys", JOptionPane.INFORMATION_MESSAGE);
   }
 
   public FormPanel getFormPanel() {

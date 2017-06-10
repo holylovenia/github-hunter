@@ -39,6 +39,7 @@ public class GitHubHunterController {
         repoBoundOperator, repoBoundNumber, followersUsed, followersBoundOperator,
         followersBoundNumber);
     searchScreen.getResultsSplitPane().getSearchResultPane().updateResults(searchController.getSearchResults());
+    searchScreen.showResultsCountDialog();
     System.out.println("SELESAI");
   }
 
