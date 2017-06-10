@@ -59,6 +59,10 @@ public class SearchResultPane extends JScrollPane implements ListSelectionListen
     usersList.setModel(listModel);
   }
 
+  public JList getUsersList() {
+    return usersList;
+  }
+
   private class SearchResultListRenderer extends DefaultListCellRenderer {
 
     private final int AVATAR_WIDTH = 150;

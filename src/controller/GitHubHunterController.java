@@ -62,6 +62,7 @@ public class GitHubHunterController {
     controller.getSearchScreen().setVisible(true);
     controller.getSearchScreen().getFormPanel().setController(controller);
     controller.getSearchScreen().getResultsSplitPane().getSearchResultPane().setController(controller);
+    controller.getSearchScreen().getResultsSplitPane().getRepositoriesPane().setController(controller);
   }
 
 }
