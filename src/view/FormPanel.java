@@ -293,7 +293,7 @@ public class FormPanel extends JPanel {
         JOptionPane.showMessageDialog(null, "Error: keyword is missing");
       } else {
         controller.keyword = keywordField.getText();
-        controller.type = categoryChoices.getSelectedIndex();
+        controller.category = categoryChoices.getSelectedIndex();
         controller.repoUsed = repoCheckbox.isSelected();
         controller.repoBoundOperator = (String) repoOperatorChoices.getSelectedItem();
         controller.repoBoundNumber = (Integer) repoField.getValue();

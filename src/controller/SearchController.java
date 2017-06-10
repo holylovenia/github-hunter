@@ -1,64 +1,55 @@
 package controller;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 import model.Search;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 /**
- * Created by Holy on 01-Jun-17.
+ * Manages search and generates search result based on JSON data.
+ *
+ * @author Holy Lovenia - 13515113
+ * @version 1.0
+ * @since 2017-06-02
  */
 public class SearchController {
 
-  private Search search;
+  /**
+   * Contains every user whose identity shows up in search result.
+   *
+   * @see UserController
+   */
   private static ArrayList<UserController> searchResults;
 
-  public SearchController(int _type, String _query) {
-    search = new Search();
-    search.setType(_type);
-    search.setQuery(_query);
-    search.generateSearchUrl();
-    setSearchResults();
-  }
+  /**
+   * Instantiation of <code>Search</code> class.
+   *
+   * @see Search
+   */
+  private Search search;
 
-  public SearchController(int _type, String _query, boolean _repoUsed, boolean _followersUsed) {
-    search = new Search();
-    search.setType(_type);
-    search.setQuery(_query);
-    search.setRepositoriesFilter(_repoUsed);
-    search.setFollowersFilter(_followersUsed);
-    search.generateSearchUrl();
-    setSearchResults();
-  }
-
-  public SearchController(int _type, String _query, boolean _repoUsed, String _repoBoundOperator,
-      int _repoBoundNumber, boolean _followersUsed) {
-    search = new Search();
-    search.setType(_type);
-    search.setQuery(_query);
-    search.setRepositoriesFilter(_repoUsed, _repoBoundOperator, _repoBoundNumber);
-    search.setFollowersFilter(_followersUsed);
-    search.generateSearchUrl();
-    setSearchResults();
-  }
-
-  public SearchController(int _type, String _query, boolean _repoUsed, boolean _followersUsed,
-      String _followersBoundOperator, int _followersBoundNumber) {
-    search = new Search();
-    search.setType(_type);
-    search.setQuery(_query);
-    search.setRepositoriesFilter(_repoUsed);
-    search.setFollowersFilter(_followersUsed, _followersBoundOperator, _followersBoundNumber);
-    search.generateSearchUrl();
-    setSearchResults();
-  }
-
-  public SearchController(int _type, String _query, boolean _repoUsed, String _repoBoundOperator,
+  /**
+   * Constructor.
+   *
+   * <p>Constructs <code>search</code>. Sets the parameters as the attributes of
+   * <code>search</code>. Generates search results.</p>
+   *
+   * @param _category Restricts search into certain fields.
+   * @param _query Contains keyword used for searching.
+   * @param _repoUsed Determines whether the repository filter will be used in searching or not.
+   * @param _repoBoundOperator Determines what mathematical operator used to filter repositories.
+   * @param _repoBoundNumber Determines limit of the repository filter.
+   * @param _followersUsed Determines whether the followers filter will be used in searching or
+   * not.
+   * @param _followersBoundOperator Determines what mathematical operator used to filter followers.
+   * @param _followersBoundNumber Determines limit of the followers filter.
+   */
+  public SearchController(int _category, String _query, boolean _repoUsed,
+      String _repoBoundOperator,
       int _repoBoundNumber, boolean _followersUsed, String _followersBoundOperator,
       int _followersBoundNumber) {
     search = new Search();
-    search.setType(_type);
+    search.setCategory(_category);
     search.setQuery(_query);
     search.setRepositoriesFilter(_repoUsed, _repoBoundOperator, _repoBoundNumber);
     search.setFollowersFilter(_followersUsed, _followersBoundOperator, _followersBoundNumber);
@@ -66,24 +57,31 @@ public class SearchController {
     setSearchResults();
   }
 
-  public static void main(String[] args) {
-    SearchController searchController = new SearchController(1, "holy", true, ">", 15, true, "<",
-        1000);
-    System.out.println(searchController.getSearchResults().size() + "");
-    for (int i = 0; i < searchController.getSearchResults().size(); i++) {
-      System.out.print(i + " ");
-      System.out.println(searchController.getSearchResult(i).getUsername() + " " + searchController
-          .getSearchResult(i).getRepositoriesCount() + " " + searchController.getSearchResult(i)
-          .getFollowers());
-    }
-    Scanner sc = new Scanner(System.in);
-    int input = sc.nextInt();
-    searchController.getSearchResult(input).setRepositories();
-    for (int i = 0; i < searchController.getSearchResult(input).getRepositoriesCount(); i++) {
-      System.out.println(searchController.getSearchResult(input).getRepository(i).getName());
-    }
+  /**
+   * Getter for <code>searchResults</code>.
+   *
+   * @return Attribute <code>searchResults</code>.
+   */
+  public static ArrayList<UserController> getSearchResults() {
+    return searchResults;
   }
 
+  /**
+   * Getter for <code>searchResults</code>.
+   *
+   * @param index Specifies position of the required <code>searchResults</code>.
+   * @return <code>UserController</code> at the specified position in <code>searchResults</code>.
+   */
+  public static UserController getSearchResult(int index) {
+    return searchResults.get(index);
+  }
+
+  /**
+   * Setter for <code>searchResults</code>.
+   *
+   * <p>Generates <code>searchResults</code> based on JSON data from <code>searchUrl</code> in
+   * <code>search</code>.</p>
+   */
   public void setSearchResults() {
     JsonRequest searchRequest = new JsonRequest(search.getSearchUrl());
     JSONObject searchJsonObj = new JSONObject(searchRequest.getRawJson());
@@ -93,30 +91,21 @@ public class SearchController {
     int pageNumber = 0;
     int count = 1;
     searchResults = new ArrayList<>(totalResults);
-    while (count <= totalResults) {
+    // Maximum number of results is 1000
+    while ((count <= totalResults) && (count <= 1000)) {
       if ((count - 1) % 30 == 0) {
         pageNumber++;
         search.setSearchUrl(search.getSearchUrl().substring(0, baseSearchUrlLength) + pageNumber);
         searchRequest = new JsonRequest(search.getSearchUrl());
         searchJsonObj = new JSONObject(searchRequest.getRawJson());
         searchJsonArray = searchJsonObj.getJSONArray("items");
-        System.out.println(search.getSearchUrl());
       }
       for (int i = 0; i < searchJsonArray.length(); i++) {
         JSONObject result = (JSONObject) searchJsonArray.get(i);
         String username = result.getString("login");
         searchResults.add(new UserController(username));
-        System.out.println((count-1) + " " + username);
         count++;
       }
     }
-  }
-
-  public static ArrayList<UserController> getSearchResults() {
-    return searchResults;
-  }
-
-  public static UserController getSearchResult(int index) {
-    return searchResults.get(index);
   }
 }

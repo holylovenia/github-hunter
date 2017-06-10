@@ -33,6 +33,8 @@ public class User {
 
   /**
    * Contains the repositories owned by user.
+   *
+   * @see Repository
    */
   private ArrayList<Repository> repositories;
 

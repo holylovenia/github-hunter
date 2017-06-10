@@ -30,11 +30,15 @@ public class Search {
 
   /**
    * Determines filter regulation for number of repositories in searching.
+   *
+   * @see Filter
    */
   private Filter repositoriesFilter;
 
   /**
    * Determines filter regulation for number of followers in searching.
+   *
+   * @see Filter
    */
   private Filter followersFilter;
 

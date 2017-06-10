@@ -7,26 +7,58 @@ import java.net.URL;
 import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
 
 /**
- * Created by Holy on 31-May-17.
+ * Manages JSON request from a specified URL through REST API access.
+ *
+ * @author Holy Lovenia - 13515113
+ * @version 1.0
+ * @since 2017-05-31
  */
 public class JsonRequest {
 
+  /**
+   * Encrypted token used for authenticated access.
+   */
   private final String token = "9bm3nqJ2RZi90Z6L6Cu1qvvKuxlxILBEgBMFtQaDp+VFGq+pewXhRypHA5ZDEUqVCjFmEDrnOg4=";
+
+  /**
+   * Response message retrieved from the connection.
+   */
   private String message;
+
+  /**
+   * Response code retrieved from the connection.
+   */
   private int status;
+
+  /**
+   * Determines URL used for JSON request.
+   */
   private String link;
+
+  /**
+   * Contatins retrieved JSON data.
+   */
   private String rawJson;
 
+  /**
+   * Constructor.
+   *
+   * <p>Initializes <code>link</code> with <code>url</code> and <code>rawJson</code> with the return
+   * value of <code>generateJson()</code> method.</p>
+   *
+   * @param url Determines URL used for JSON request.
+   * @see #generateJson()
+   */
   public JsonRequest(String url) {
     link = url;
     rawJson = generateJson();
   }
 
-  public static void main(String[] args) {
-    JsonRequest request = new JsonRequest("https://api.github.com/search/users?q=holy&page=2");
-    System.out.println(request.getRawJson());
-  }
-
+  /**
+   * Decrypt <code>token</code>.
+   *
+   * @return Decrypted <code>string</code> from <code>token</code>.
+   */
   public String generateDecryptedToken() {
     StandardPBEStringEncryptor encryptor = new StandardPBEStringEncryptor();
     encryptor.setPassword("holy-github-hunter");
@@ -34,22 +66,47 @@ public class JsonRequest {
     return decryptedToken;
   }
 
+  /**
+   * Getter for <code>message</code>.
+   *
+   * @return Attribute <code>message</code>.
+   */
   public String getMessage() {
     return message;
   }
 
+  /**
+   * Getter for <code>status</code>.
+   *
+   * @return Attribute <code>status</code>.
+   */
   public int getStatus() {
     return status;
   }
 
+  /**
+   * Getter for <code>link</code>.
+   *
+   * @return Attribute <code>link</code>.
+   */
   public String getLink() {
     return link;
   }
 
+  /**
+   * Getter for <code>rawJson</code>.
+   *
+   * @return Attribute <code>rawJson</code>.
+   */
   public String getRawJson() {
     return rawJson;
   }
 
+  /**
+   * Generates JSON data.
+   *
+   * @return JSON data retrieved from <code>link</code>.
+   */
   public String generateJson() {
     HttpURLConnection urlConnection = null;
     try {
