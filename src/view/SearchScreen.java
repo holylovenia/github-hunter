@@ -57,7 +57,7 @@ public class SearchScreen extends JFrame {
   }
 
   public void showResultsCountDialog() {
-    JOptionPane.showMessageDialog(null, SearchController.getSearchResults().length + " users found",
+    JOptionPane.showMessageDialog(null, SearchController.getSearchResults().size() + " users found",
         "Hunter's preys", JOptionPane.INFORMATION_MESSAGE);
   }
 

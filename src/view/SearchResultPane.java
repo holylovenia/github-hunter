@@ -6,6 +6,7 @@ import controller.UserController;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.DefaultListModel;
@@ -43,7 +44,7 @@ public class SearchResultPane extends JScrollPane implements ListSelectionListen
     int selectedIndex = usersList.getSelectedIndex();
     UserController user = SearchController.getSearchResult(selectedIndex);
     if (((user.getRepositories() == null) && (user.getRepositoriesCount() > 0)) || (
-        (user.getRepositories() != null) && (user.getRepositories().length != user
+        (user.getRepositories() != null) && (user.getRepositories().size() != user
             .getRepositoriesCount()))) {
       user.setRepositories();
     }
@@ -55,10 +56,10 @@ public class SearchResultPane extends JScrollPane implements ListSelectionListen
     controller = _controller;
   }
 
-  public void updateResults(UserController[] users) {
+  public void updateResults(ArrayList<UserController> users) {
     listModel.clear();
-    for (int i = 0; i < users.length; i++) {
-      listModel.addElement(users[i]);
+    for (int i = 0; i < users.size(); i++) {
+      listModel.addElement(users.get(i));
     }
     usersList.setModel(listModel);
   }

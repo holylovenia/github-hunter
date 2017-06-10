@@ -1,5 +1,6 @@
 package controller;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 import model.Search;
 import org.json.JSONArray;
@@ -11,7 +12,7 @@ import org.json.JSONObject;
 public class SearchController {
 
   private Search search;
-  private static UserController[] searchResults;
+  private static ArrayList<UserController> searchResults;
 
   public SearchController(int _type, String _query) {
     search = new Search();
@@ -68,8 +69,8 @@ public class SearchController {
   public static void main(String[] args) {
     SearchController searchController = new SearchController(1, "holy", true, ">", 15, true, "<",
         1000);
-    System.out.println(searchController.getSearchResults().length + "");
-    for (int i = 0; i < searchController.getSearchResults().length; i++) {
+    System.out.println(searchController.getSearchResults().size() + "");
+    for (int i = 0; i < searchController.getSearchResults().size(); i++) {
       System.out.print(i + " ");
       System.out.println(searchController.getSearchResult(i).getUsername() + " " + searchController
           .getSearchResult(i).getRepositoriesCount() + " " + searchController.getSearchResult(i)
@@ -91,7 +92,7 @@ public class SearchController {
     int baseSearchUrlLength = search.getSearchUrl().length();
     int pageNumber = 0;
     int count = 1;
-    searchResults = new UserController[totalResults];
+    searchResults = new ArrayList<>(totalResults);
     while (count <= totalResults) {
       if ((count - 1) % 30 == 0) {
         pageNumber++;
@@ -104,18 +105,18 @@ public class SearchController {
       for (int i = 0; i < searchJsonArray.length(); i++) {
         JSONObject result = (JSONObject) searchJsonArray.get(i);
         String username = result.getString("login");
-        searchResults[count - 1] = new UserController(username);
+        searchResults.add(new UserController(username));
         System.out.println((count-1) + " " + username);
         count++;
       }
     }
   }
 
-  public static UserController[] getSearchResults() {
+  public static ArrayList<UserController> getSearchResults() {
     return searchResults;
   }
 
   public static UserController getSearchResult(int index) {
-    return searchResults[index];
+    return searchResults.get(index);
   }
 }

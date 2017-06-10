@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 /**
  * Created by Holy on 31-May-17.
  */
@@ -9,7 +11,7 @@ public class User {
   private String avatarUrl;
   private String email;
   private String fullname;
-  private Repository[] repositories;
+  private ArrayList<Repository> repositories;
   private int repositoriesCount;
   private int followers;
 
@@ -55,15 +57,15 @@ public class User {
     fullname = _fullname;
   }
 
-  public Repository[] getRepositories() {
+  public ArrayList<Repository> getRepositories() {
     return repositories;
   }
 
   public Repository getRepository(int index) {
-    return repositories[index];
+    return repositories.get(index);
   }
 
-  public void setRepositories(Repository[] _repositories) {
+  public void setRepositories(ArrayList<Repository> _repositories) {
     repositories = _repositories;
   }
 

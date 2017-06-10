@@ -1,5 +1,6 @@
 package controller;
 
+import java.util.ArrayList;
 import model.Repository;
 import model.User;
 import org.json.JSONArray;
@@ -72,10 +73,10 @@ public class UserController {
     String repositoriesUrl = defaultUserUrl + getUsername() + "/repos";
     JsonRequest repositoriesRequest = new JsonRequest(repositoriesUrl);
     JSONArray repositoriesJsonArray = new JSONArray(repositoriesRequest.getRawJson());
-    Repository[] tempRepositories = new Repository[getRepositoriesCount()];
+    ArrayList<Repository> tempRepositories = new ArrayList<>(getRepositoriesCount());
     for (int i = 0; i < getRepositoriesCount(); i++) {
       RepositoryController repoController = new RepositoryController(repositoriesJsonArray, i);
-      tempRepositories[i] = repoController.getRepository();
+      tempRepositories.add(repoController.getRepository());
     }
     user.setRepositories(tempRepositories);
   }
@@ -110,7 +111,7 @@ public class UserController {
     return user.getFullname();
   }
 
-  public Repository[] getRepositories() {
+  public ArrayList<Repository> getRepositories() {
     return user.getRepositories();
   }
 

@@ -15,6 +15,7 @@ import java.awt.event.MouseListener;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.DefaultListModel;
@@ -50,11 +51,11 @@ public class RepositoriesPane extends JScrollPane implements MouseListener {
     controller = _controller;
   }
 
-  public void updateRepositories(Repository[] repositories) {
+  public void updateRepositories(ArrayList<Repository> repositories) {
     listModel.clear();
     if (repositories != null) {
-      for (int i = 0; i < repositories.length; i++) {
-        listModel.addElement(repositories[i]);
+      for (int i = 0; i < repositories.size(); i++) {
+        listModel.addElement(repositories.get(i));
       }
     }
     reposList.setModel(listModel);
