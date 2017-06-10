@@ -12,20 +12,50 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 
 /**
- * Created by Holy on 07-Jun-17.
+ * Static class which processes image and font retrieval.
+ *
+ * @author Holy Lovenia - 13515113
+ * @version 1.0
+ * @since 2017-06-07
  */
 public final class ProcessedAsset {
 
+  /**
+   * Contains Open Sans Italic font.
+   */
   public static Font openSansItalic;
+
+  /**
+   * Contains Roboto Regular font.
+   */
   public static Font robotoRegular;
+
+  /**
+   * Contains Roboto Black font.
+   */
   public static Font robotoBlack;
 
+  /**
+   * Constructor.
+   *
+   * <p>Initializes <code>openSansItalic</code>, <code>robotoRegular</code>, and
+   * <code>robotoBlack</code>.</p>
+   */
   public ProcessedAsset() {
     openSansItalic = ProcessedAsset.getFont(getClass(), "opensans-italic");
     robotoRegular = ProcessedAsset.getFont(getClass(), "roboto-regular");
     robotoBlack = ProcessedAsset.getFont(getClass(), "roboto-black");
   }
 
+  /**
+   * Generator for image.
+   *
+   * <p>Static method to retrieve image.</p>
+   *
+   * @param _class Class which requests the image
+   * @param _imagePath Relative image path
+   * @return Image from <code>_imagePath</code>
+   */
   public static Image getImage(Class _class, String _imagePath) {
     URL imgPath = _class.getResource(_imagePath);
     ImageIcon imageIcon = new ImageIcon(imgPath);
@@ -33,6 +63,14 @@ public final class ProcessedAsset {
     return image;
   }
 
+  /**
+   * Generator for image.
+   *
+   * <p>Static method to retrieve image.</p>
+   *
+   * @param link Image URL
+   * @return Image from <code>link</code>
+   */
   public static Image getImage(String link) {
     Image image = null;
     try {
@@ -44,6 +82,16 @@ public final class ProcessedAsset {
     return image;
   }
 
+  /**
+   * Generator for image.
+   *
+   * <p>Static method to retrieve scaled image with specified dimension.</p>
+   *
+   * @param srcImg Original image
+   * @param w Width requested
+   * @param h Height requested
+   * @return Scaled image with <code>w</code> x <code>h</code> dimension
+   */
   public static Image getScaledImage(Image srcImg, int w, int h) {
     BufferedImage resizedImg = new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
     Graphics2D g2 = resizedImg.createGraphics();
@@ -54,6 +102,15 @@ public final class ProcessedAsset {
     return resizedImg;
   }
 
+  /**
+   * Generator for font.
+   *
+   * <p>Static method to retrieve specified font.</p>
+   *
+   * @param _class Class which requests the image
+   * @param _fontName Name of the font
+   * @return Specified font
+   */
   public static Font getFont(Class _class, String _fontName) {
     Font chosenFont = null;
     try {

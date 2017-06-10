@@ -10,15 +10,44 @@ import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
 
 /**
- * Created by Holy on 09-Jun-17.
+ * Displays search form and search results in a frame.
+ *
+ * @author Holy Lovenia - 13515113
+ * @version 1.0
+ * @since 2017-06-10
  */
 public class SearchScreen extends JFrame {
 
+  /**
+   * Instantiation of <code>FormPanel</code>.
+   *
+   * @see FormPanel
+   */
   private FormPanel formPanel;
+
+  /**
+   * Instantiation of <code>ResultSplitPane</code>.
+   *
+   * @see ResultsSplitPane
+   */
   private ResultsSplitPane resultsSplitPane;
+
+  /**
+   * Manages position of the components.
+   */
   private GridBagLayout layout;
+
+  /**
+   * Defines regulation of the layout.
+   */
   private GridBagConstraints constraints;
 
+  /**
+   * Constructor.
+   *
+   * <p>Sets title, ability to resize, and close operation. Constructs, prepares, and adds
+   * components needed.</p>
+   */
   public SearchScreen() {
     setTitle("GitHub Hunter");
     setResizable(false);
@@ -32,16 +61,25 @@ public class SearchScreen extends JFrame {
     pack();
   }
 
+  /**
+   * Creates components needed.
+   */
   public void createComponents() {
     createFormPanel();
     createResultsSplitPane();
   }
 
+  /**
+   * Adds components needed to panel.
+   */
   public void addComponents() {
     add(formPanel);
     add(resultsSplitPane);
   }
 
+  /**
+   * Creates and organizes <code>formPanel</code>.
+   */
   public void createFormPanel() {
     formPanel = new FormPanel();
     constraints.gridx = 0;
@@ -49,6 +87,9 @@ public class SearchScreen extends JFrame {
     layout.setConstraints(formPanel, constraints);
   }
 
+  /**
+   * Creates and organizes <code>resultsSplitPane</code>.
+   */
   public void createResultsSplitPane() {
     resultsSplitPane = new ResultsSplitPane();
     constraints.gridx = 0;
@@ -56,15 +97,28 @@ public class SearchScreen extends JFrame {
     layout.setConstraints(resultsSplitPane, constraints);
   }
 
+  /**
+   * Displays results count using option pane.
+   */
   public void showResultsCountDialog() {
     JOptionPane.showMessageDialog(null, SearchController.getSearchResults().size() + " users found",
         "Hunter's preys", JOptionPane.INFORMATION_MESSAGE);
   }
 
+  /**
+   * Getter for <code>formPanel</code>.
+   *
+   * @return Attribute <code>formPanel</code>
+   */
   public FormPanel getFormPanel() {
     return formPanel;
   }
 
+  /**
+   * Getter for <code>resultsSplitPanel</code>.
+   *
+   * @return Attribute <code>resultsSplitPanel</code>
+   */
   public ResultsSplitPane getResultsSplitPane() {
     return resultsSplitPane;
   }

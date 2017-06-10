@@ -26,14 +26,36 @@ import javax.swing.ListSelectionModel;
 import model.Repository;
 
 /**
- * Created by Holy on 09-Jun-17.
+ * Displays the repositories of selected user in a pane.
+ *
+ * @author Holy Lovenia - 13515113
+ * @version 1.0
+ * @since 2017-06-10
  */
 public class RepositoriesPane extends JScrollPane implements MouseListener {
 
+  /**
+   * Contains the list of repositories.
+   */
   private JList reposList;
+
+  /**
+   * Supports <code>reposList</code>.
+   */
   private DefaultListModel listModel;
+
+  /**
+   * Instantiation of <code>GitHubHunterController</code>.
+   *
+   * @see GitHubHunterController
+   */
   private GitHubHunterController controller;
 
+  /**
+   * Constructor.
+   *
+   * <p>Constructs and prepares the attributes and components needed.</p>
+   */
   public RepositoriesPane() {
     super();
     listModel = new DefaultListModel();
@@ -47,10 +69,22 @@ public class RepositoriesPane extends JScrollPane implements MouseListener {
     setViewportView(reposList);
   }
 
+  /**
+   * Setter for <code>controller</code>.
+   *
+   * <p>Initializes <code>controller</code> with <code>_controller</code>.</p>
+   *
+   * @param _controller Controls GUI and search data flow.
+   */
   public void setController(GitHubHunterController _controller) {
     controller = _controller;
   }
 
+  /**
+   * <p>Updates <code>reposList</code> according to <code>repositories</code>.</p>
+   *
+   * @param repositories Requested repositories of a certain user.
+   */
   public void updateRepositories(ArrayList<Repository> repositories) {
     listModel.clear();
     if (repositories != null) {
@@ -61,6 +95,14 @@ public class RepositoriesPane extends JScrollPane implements MouseListener {
     reposList.setModel(listModel);
   }
 
+  /**
+   * Mouse event.
+   *
+   * <p>Directs user to the specified URL using web browser.</p>
+   *
+   * @param e Mouse clicked event
+   */
+  @Override
   public void mouseClicked(MouseEvent e) {
     if (e.getClickCount() == 1) {
       int repoSelectedIndex = reposList.locationToIndex(e.getPoint());
@@ -78,25 +120,72 @@ public class RepositoriesPane extends JScrollPane implements MouseListener {
     }
   }
 
+  /**
+   * Mouse event.
+   *
+   * @param e Mouse pressed event
+   */
+  @Override
+  public void mousePressed(MouseEvent e) {
+  }
+
+  /**
+   * Mouse event.
+   *
+   * @param e Mouse released event
+   */
+  @Override
+  public void mouseReleased(MouseEvent e) {
+  }
+
+  /**
+   * Mouse event.
+   *
+   * <p>Sets cursor with a specified icon.</p>
+   *
+   * @param e Mouse entered event
+   */
+  @Override
   public void mouseEntered(MouseEvent e) {
     setCursor(getPredefinedCursor(HAND_CURSOR));
   }
 
+  /**
+   * Mouse event.
+   *
+   * <p>Sets cursor with a specified icon.</p>
+   *
+   * @param e Mouse exited event
+   */
+  @Override
   public void mouseExited(MouseEvent e) {
     setCursor(getDefaultCursor());
   }
 
-  public void mouseReleased(MouseEvent e) {
-  }
-
-  public void mousePressed(MouseEvent e) {
-  }
-
+  /**
+   * Defines list renderer.
+   */
   private class RepositoriesListRenderer extends DefaultListCellRenderer {
 
+    /**
+     * Determines text color for the components in list.
+     */
     private final Color textColor = Color.BLACK;
+
+    /**
+     * Determines background color for the components in list.
+     */
     private final Color backgroundColor = Color.WHITE;
 
+    /**
+     * Generator for list renderer.
+     *
+     * <p>Customizes component which would be added to list.</p>
+     *
+     * @param value Processed component
+     * @return Label which contains repository data
+     */
+    @Override
     public Component getListCellRendererComponent(JList list, Object value, int index,
         boolean selected, boolean expanded) {
       JLabel label = new JLabel();
@@ -111,6 +200,12 @@ public class RepositoriesPane extends JScrollPane implements MouseListener {
       return label;
     }
 
+    /**
+     * Generates HTML text from data contained in <code>repo</code>.
+     *
+     * @param repo Requested repository
+     * @return HTML text
+     */
     public String getHtmlText(Repository repo) {
       String htmlText = "<html>";
       htmlText += "<b>" + repo.getName() + "</b><br>";

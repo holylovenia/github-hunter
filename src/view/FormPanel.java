@@ -19,39 +19,128 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.WindowConstants;
 
 /**
- * Created by Holy on 08-Jun-17.
+ * Displays search form for user input in panel.
+ *
+ * @author Holy Lovenia - 13515113
+ * @version 1.0
+ * @since 2017-06-09
  */
 public class FormPanel extends JPanel {
 
+  /**
+   * Determines width of the panel.
+   */
   private final int FORM_WIDTH = 1800;
+
+  /**
+   * Determines height of the panel.
+   */
   private final int FORM_HEIGHT = 280;
+
+  /**
+   * Determines text color of the components in panel.
+   */
   private final Color foregroundColor = Color.BLACK;
+
+  /**
+   * Determines background color of the components in panel.
+   */
   private final Color backgroundColor = Color.WHITE;
+
+  /**
+   * Manages position of the components.
+   */
   private GridBagLayout layout;
+
+  /**
+   * Defines regulation of the layout.
+   */
   private GridBagConstraints constraints;
+
+  /**
+   * Displays search title in label.
+   */
   private JLabel searchLabel;
+
+  /**
+   * Displays keyword text in label.
+   */
   private JLabel keywordLabel;
+
+  /**
+   * Displays keyword text field for user input.
+   */
   private JTextField keywordField;
+
+  /**
+   * Displays category text in label.
+   */
   private JLabel categoryLabel;
+
+  /**
+   * Displays category choices with a dropdown list.
+   */
   private JComboBox categoryChoices;
+
+  /**
+   * Displays filter title in label.
+   */
   private JLabel filterLabel;
+
+  /**
+   * Displays checkbox for repository filter usage.
+   */
   private JCheckBox repoCheckbox;
+
+  /**
+   * Displays operator choices for repository filter with a dropdown list.
+   */
   private JComboBox repoOperatorChoices;
+
+  /**
+   * Displays repository filter bound number text field for user input.
+   */
   private JFormattedTextField repoField;
+
+  /**
+   * Displays checkbox for followers filter usage.
+   */
   private JCheckBox followersCheckbox;
+
+  /**
+   * Displays operator choices for followers filter with a dropdown list.
+   */
   private JComboBox followersOperatorChoices;
+
+  /**
+   * Displays followers filter bound number text field for user input.
+   */
   private JFormattedTextField followersField;
+
+  /**
+   * Receives submit signal from user.
+   */
   private JButton searchButton;
+
+  /**
+   * Instantiation of <code>GitHubHunterController</code>.
+   *
+   * @see GitHubHunterController
+   */
   private GitHubHunterController controller;
 
+  /**
+   * Constructor.
+   *
+   * <p>Sets size and background. Constructs and prepares <code>layout</code> and
+   * <code>constraints</code>. Creates and adds components needed to panel.</p>
+   */
   public FormPanel() {
     setPreferredSize(new Dimension(FORM_WIDTH, FORM_HEIGHT));
     setBackground(backgroundColor);
@@ -63,20 +152,20 @@ public class FormPanel extends JPanel {
     addComponents();
   }
 
-  public static void main(String[] args) {
-    JFrame frame = new JFrame();
-    frame.setTitle("Form");
-    frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-    FormPanel formPanel = new FormPanel();
-    frame.add(formPanel);
-    frame.pack();
-    frame.setVisible(true);
-  }
-
+  /**
+   * Setter for <code>controller</code>.
+   *
+   * <p>Initializes <code>controller</code> with <code>_controller</code>.</p>
+   *
+   * @param _controller Controls GUI and search data flow.
+   */
   public void setController(GitHubHunterController _controller) {
     controller = _controller;
   }
 
+  /**
+   * Creates components needed.
+   */
   public void createComponents() {
     createSearchText();
     createKeywordText();
@@ -93,6 +182,9 @@ public class FormPanel extends JPanel {
     createSearchButton();
   }
 
+  /**
+   * Adds components needed to panel.
+   */
   public void addComponents() {
     add(searchLabel);
     add(keywordLabel);
@@ -109,6 +201,9 @@ public class FormPanel extends JPanel {
     add(searchButton);
   }
 
+  /**
+   * Creates and organizes <code>searchLabel</code>.
+   */
   public void createSearchText() {
     constraints.gridx = 0;
     constraints.gridy = 0;
@@ -121,6 +216,9 @@ public class FormPanel extends JPanel {
     searchLabel = searchText;
   }
 
+  /**
+   * Creates and organizes <code>keywordLabel</code>.
+   */
   public void createKeywordText() {
     constraints.gridx = 0;
     constraints.gridy = 1;
@@ -133,6 +231,9 @@ public class FormPanel extends JPanel {
     keywordLabel = keywordText;
   }
 
+  /**
+   * Creates and organizes <code>keywordField</code>.
+   */
   public void createKeywordField() {
     constraints.gridx = 1;
     constraints.gridy = 1;
@@ -144,6 +245,9 @@ public class FormPanel extends JPanel {
     keywordField = keywordTextField;
   }
 
+  /**
+   * Creates and organizes <code>categoryLabel</code>.
+   */
   public void createCategoryText() {
     constraints.gridx = 2;
     constraints.gridy = 1;
@@ -156,6 +260,9 @@ public class FormPanel extends JPanel {
     categoryLabel = categoryText;
   }
 
+  /**
+   * Creates and organizes <code>categoryChoices</code>.
+   */
   public void createCategoryChoices() {
     constraints.gridx = 3;
     constraints.gridy = 1;
@@ -173,6 +280,9 @@ public class FormPanel extends JPanel {
     categoryChoices = _categoryChoices;
   }
 
+  /**
+   * Creates and organizes <code>filterLabel</code>.
+   */
   public void createFilterText() {
     constraints.gridx = 0;
     constraints.gridy = 2;
@@ -185,6 +295,9 @@ public class FormPanel extends JPanel {
     filterLabel = filterText;
   }
 
+  /**
+   * Creates and organizes <code>repoCheckbox</code>.
+   */
   public void createFilterRepositoryCheckBox() {
     constraints.gridx = 0;
     constraints.gridy = 3;
@@ -198,6 +311,9 @@ public class FormPanel extends JPanel {
     repoCheckbox = _repoCheckbox;
   }
 
+  /**
+   * Creates and organizes <code>repoOperatorChoices</code>.
+   */
   public void createFilterRepositoryOperator() {
     constraints.gridx = 1;
     constraints.gridy = 3;
@@ -214,6 +330,9 @@ public class FormPanel extends JPanel {
     repoOperatorChoices = repoOperators;
   }
 
+  /**
+   * Creates and organizes <code>repoField</code>.
+   */
   public void createFilterRepositoryField() {
     constraints.gridx = 2;
     constraints.gridy = 3;
@@ -230,6 +349,9 @@ public class FormPanel extends JPanel {
     repoField = _repoField;
   }
 
+  /**
+   * Creates and organizes <code>followersCheckbox</code>.
+   */
   public void createFilterFollowersCheckBox() {
     constraints.gridx = 3;
     constraints.gridy = 3;
@@ -243,6 +365,9 @@ public class FormPanel extends JPanel {
     followersCheckbox = _followersCheckbox;
   }
 
+  /**
+   * Creates and organizes <code>followersOperatorChoices</code>.
+   */
   public void createFilterFollowersOperator() {
     constraints.gridx = 4;
     constraints.gridy = 3;
@@ -261,6 +386,9 @@ public class FormPanel extends JPanel {
     followersOperatorChoices = followersOperators;
   }
 
+  /**
+   * Creates and organizes <code>followersField</code>.
+   */
   public void createFilterFollowersField() {
     constraints.gridx = 5;
     constraints.gridy = 3;
@@ -277,6 +405,9 @@ public class FormPanel extends JPanel {
     followersField = _followersField;
   }
 
+  /**
+   * Creates and organizes <code>searchButton</code>.
+   */
   public void createSearchButton() {
     constraints.gridx = 0;
     constraints.gridy = 4;

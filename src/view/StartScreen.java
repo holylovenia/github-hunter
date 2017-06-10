@@ -9,13 +9,37 @@ import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 
 /**
- * Created by Holy on 07-Jun-17.
+ * Displays start up of application in a frame.
+ *
+ * @author Holy Lovenia - 13515113
+ * @version 1.0
+ * @since 2017-06-07
  */
 public class StartScreen extends JFrame {
 
+  /**
+   * Determines width of the frame.
+   */
   private final int SCREEN_WIDTH = 1800;
+
+  /**
+   * Determines height of the frame.
+   */
   private final int SCREEN_HEIGHT = 900;
+
+  /**
+   * Instantiation of <code>StartPanel</code>.
+   *
+   * @see StartPanel
+   */
   private StartPanel startPanel;
+
+  /**
+   * Constructor.
+   *
+   * <p>Sets title, ability to resize, and close operation. Constructs, prepares, and adds
+   * components needed.</p>
+   */
   public StartScreen() {
     setTitle("GitHub Hunter");
     setResizable(false);
@@ -26,19 +50,24 @@ public class StartScreen extends JFrame {
     pack();
   }
 
-  public static void main(String[] args) {
-    StartScreen startScreen = new StartScreen();
-    startScreen.setVisible(true);
-  }
-
+  /**
+   * Displays start up of application in a panel.
+   */
   private class StartPanel extends JPanel {
 
+    /**
+     * Prepares and paints panel.
+     */
     public void setUpStartPanel() {
       setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
       setBackground(Color.WHITE);
       repaint();
     }
 
+    /**
+     * <p>Paints the panel with application logo.</p>
+     */
+    @Override
     public void paintComponent(Graphics g) {
       super.paintComponent(g);
       Image logo = ProcessedAsset

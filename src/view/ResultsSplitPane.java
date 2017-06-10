@@ -4,15 +4,48 @@ import java.awt.Dimension;
 import javax.swing.JSplitPane;
 
 /**
- * Created by Holy on 09-Jun-17.
+ * Displays both users and their repositories from search result in a split pane.
+ *
+ * @author Holy Lovenia - 13515113
+ * @version 1.0
+ * @since 2017-06-10
  */
 public class ResultsSplitPane extends JSplitPane {
+
+  /**
+   * Determines width of the split pane.
+   */
   private final int RESULTS_SPLIT_PANE_WIDTH = 1800;
+
+  /**
+   * Determines height of the split pane.
+   */
   private final int RESULTS_SPLIT_PANE_HEIGHT = 620;
+
+  /**
+   * Determines the location of split pane divider.
+   */
   private final int dividerLocation = 600;
+
+  /**
+   * Instantiation of <code>SearchResultPane</code>
+   *
+   * @see SearchResultPane
+   */
   private SearchResultPane searchResultPane;
+
+  /**
+   * Instantiation of <code>RepositoriesPane</code>
+   *
+   * @see RepositoriesPane
+   */
   private RepositoriesPane repositoriesPane;
 
+  /**
+   * Constructor.
+   *
+   * <p>Constructs and prepares the attributes and components needed.</p>
+   */
   public ResultsSplitPane() {
     super();
     setOrientation(HORIZONTAL_SPLIT);
@@ -25,18 +58,40 @@ public class ResultsSplitPane extends JSplitPane {
     setPreferredSize(new Dimension(RESULTS_SPLIT_PANE_WIDTH, RESULTS_SPLIT_PANE_HEIGHT));
   }
 
-  public int getDividerLocation() {
-    return dividerLocation;
-  }
-
+  /**
+   * <p>Specifies last divider location to disable the divider from moving.</p>
+   *
+   * @return Attribute <code>dividerLocation</code>
+   */
+  @Override
   public int getLastDividerLocation() {
     return dividerLocation;
   }
 
+  /**
+   * <p>Specifies divider location to disable the divider from moving.</p>
+   *
+   * @return Attribute <code>dividerLocation</code>
+   */
+  @Override
+  public int getDividerLocation() {
+    return dividerLocation;
+  }
+
+  /**
+   * Getter for <code>searchResultPane</code>
+   *
+   * @return Attribute <code>searchResultPane</code>
+   */
   public SearchResultPane getSearchResultPane() {
     return searchResultPane;
   }
 
+  /**
+   * Getter for <code>repositoriesPane</code>
+   *
+   * @return Attribute <code>repositoriesPane</code>
+   */
   public RepositoriesPane getRepositoriesPane() {
     return repositoriesPane;
   }
