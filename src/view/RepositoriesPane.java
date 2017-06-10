@@ -6,11 +6,8 @@ import static java.awt.Cursor.getPredefinedCursor;
 
 import controller.GitHubHunterController;
 import controller.SearchController;
-import controller.UserController;
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.Cursor;
 import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.event.MouseEvent;
@@ -18,29 +15,20 @@ import java.awt.event.MouseListener;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
 import javax.swing.BorderFactory;
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.DefaultListModel;
-import javax.swing.JEditorPane;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
-import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.ListSelectionModel;
-import javax.swing.ScrollPaneConstants;
-import javax.swing.event.HyperlinkEvent;
-import javax.swing.event.HyperlinkEvent.EventType;
-import javax.swing.event.HyperlinkListener;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
 import model.Repository;
 
 /**
  * Created by Holy on 09-Jun-17.
  */
 public class RepositoriesPane extends JScrollPane implements MouseListener {
+
   private JList reposList;
   private DefaultListModel listModel;
   private GitHubHunterController controller;
@@ -64,7 +52,7 @@ public class RepositoriesPane extends JScrollPane implements MouseListener {
 
   public void updateRepositories(Repository[] repositories) {
     listModel.clear();
-    if(repositories != null) {
+    if (repositories != null) {
       for (int i = 0; i < repositories.length; i++) {
         listModel.addElement(repositories[i]);
       }
@@ -73,10 +61,12 @@ public class RepositoriesPane extends JScrollPane implements MouseListener {
   }
 
   public void mouseClicked(MouseEvent e) {
-    if(e.getClickCount() == 1) {
+    if (e.getClickCount() == 1) {
       int repoSelectedIndex = reposList.locationToIndex(e.getPoint());
-      int userSelectedIndex = controller.getSearchScreen().getResultsSplitPane().getSearchResultPane().getUsersList().getSelectedIndex();
-      String url = SearchController.getSearchResult(userSelectedIndex).getRepository(repoSelectedIndex).getUrl();
+      int userSelectedIndex = controller.getSearchScreen().getResultsSplitPane()
+          .getSearchResultPane().getUsersList().getSelectedIndex();
+      String url = SearchController.getSearchResult(userSelectedIndex)
+          .getRepository(repoSelectedIndex).getUrl();
       try {
         Desktop.getDesktop().browse(new URI(url));
       } catch (IOException e1) {
@@ -95,9 +85,11 @@ public class RepositoriesPane extends JScrollPane implements MouseListener {
     setCursor(getDefaultCursor());
   }
 
-  public void mouseReleased(MouseEvent e) {}
+  public void mouseReleased(MouseEvent e) {
+  }
 
-  public void mousePressed(MouseEvent e) {}
+  public void mousePressed(MouseEvent e) {
+  }
 
   private class RepositoriesListRenderer extends DefaultListCellRenderer {
 
@@ -109,7 +101,7 @@ public class RepositoriesPane extends JScrollPane implements MouseListener {
       JLabel label = new JLabel();
       Repository repo = (Repository) value;
       label.setText(getHtmlText(repo));
-      label.setFont(ProcessedAsset.getFont(getClass(), "roboto-regular").deriveFont(20f));
+      label.setFont(ProcessedAsset.robotoRegular.deriveFont(20f));
       label.setHorizontalAlignment(JLabel.LEFT);
       label.setBorder(BorderFactory.createLoweredSoftBevelBorder());
       label.setForeground(textColor);

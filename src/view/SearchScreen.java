@@ -1,7 +1,6 @@
 package view;
 
 import static java.awt.GridBagConstraints.BOTH;
-import static java.awt.GridBagConstraints.NONE;
 
 import controller.SearchController;
 import java.awt.GridBagConstraints;
@@ -14,6 +13,7 @@ import javax.swing.WindowConstants;
  * Created by Holy on 09-Jun-17.
  */
 public class SearchScreen extends JFrame {
+
   private FormPanel formPanel;
   private ResultsSplitPane resultsSplitPane;
   private GridBagLayout layout;
@@ -57,7 +57,8 @@ public class SearchScreen extends JFrame {
   }
 
   public void showResultsCountDialog() {
-    JOptionPane.showMessageDialog(null, SearchController.getSearchResults().length + " users found", "Hunter's preys", JOptionPane.INFORMATION_MESSAGE);
+    JOptionPane.showMessageDialog(null, SearchController.getSearchResults().length + " users found",
+        "Hunter's preys", JOptionPane.INFORMATION_MESSAGE);
   }
 
   public FormPanel getFormPanel() {

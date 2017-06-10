@@ -5,7 +5,6 @@ import static java.awt.GridBagConstraints.NONE;
 import static java.awt.GridBagConstraints.RELATIVE;
 import static java.awt.GridBagConstraints.REMAINDER;
 import static java.awt.GridBagConstraints.WEST;
-import static java.awt.event.MouseEvent.MOUSE_CLICKED;
 
 import controller.GitHubHunterController;
 import java.awt.Color;
@@ -14,9 +13,6 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.FocusEvent;
-import javafx.scene.input.MouseEvent;
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -37,6 +33,8 @@ public class FormPanel extends JPanel {
 
   private final int FORM_WIDTH = 1800;
   private final int FORM_HEIGHT = 280;
+  private final Color foregroundColor = Color.BLACK;
+  private final Color backgroundColor = Color.WHITE;
   private GridBagLayout layout;
   private GridBagConstraints constraints;
   private JLabel searchLabel;
@@ -52,12 +50,11 @@ public class FormPanel extends JPanel {
   private JComboBox followersOperatorChoices;
   private JFormattedTextField followersField;
   private JButton searchButton;
-  public static boolean formFilled;
   private GitHubHunterController controller;
 
   public FormPanel() {
     setPreferredSize(new Dimension(FORM_WIDTH, FORM_HEIGHT));
-    setBackground(Color.WHITE);
+    setBackground(backgroundColor);
     layout = new GridBagLayout();
     setLayout(layout);
     constraints = new GridBagConstraints();
@@ -118,8 +115,8 @@ public class FormPanel extends JPanel {
     constraints.fill = REMAINDER;
     constraints.insets = new Insets(0, 0, 0, 0);
     JLabel searchText = new JLabel("SEARCH", JLabel.LEFT);
-    searchText.setForeground(Color.black);
-    searchText.setFont(ProcessedAsset.getFont(getClass(), "roboto-black").deriveFont(20f));
+    searchText.setForeground(foregroundColor);
+    searchText.setFont(ProcessedAsset.robotoBlack.deriveFont(20f));
     layout.setConstraints(searchText, constraints);
     searchLabel = searchText;
   }
@@ -130,8 +127,8 @@ public class FormPanel extends JPanel {
     constraints.fill = NONE;
     constraints.insets = new Insets(0, 0, 0, 80);
     JLabel keywordText = new JLabel("Keyword: ", JLabel.LEFT);
-    keywordText.setForeground(Color.black);
-    keywordText.setFont(ProcessedAsset.getFont(getClass(), "roboto-regular").deriveFont(20f));
+    keywordText.setForeground(foregroundColor);
+    keywordText.setFont(ProcessedAsset.robotoRegular.deriveFont(20f));
     layout.setConstraints(keywordText, constraints);
     keywordLabel = keywordText;
   }
@@ -142,7 +139,7 @@ public class FormPanel extends JPanel {
     constraints.fill = RELATIVE;
     constraints.insets = new Insets(0, 0, 0, 150);
     JTextField keywordTextField = new JTextField(25);
-    keywordTextField.setFont(ProcessedAsset.getFont(getClass(), "opensans-italic").deriveFont(20f));
+    keywordTextField.setFont(ProcessedAsset.openSansItalic.deriveFont(20f));
     layout.setConstraints(keywordTextField, constraints);
     keywordField = keywordTextField;
   }
@@ -153,8 +150,8 @@ public class FormPanel extends JPanel {
     constraints.fill = RELATIVE;
     constraints.insets = new Insets(0, 50, 0, 100);
     JLabel categoryText = new JLabel("Category: ", JLabel.LEFT);
-    categoryText.setForeground(Color.black);
-    categoryText.setFont(ProcessedAsset.getFont(getClass(), "roboto-regular").deriveFont(20f));
+    categoryText.setForeground(foregroundColor);
+    categoryText.setFont(ProcessedAsset.robotoRegular.deriveFont(20f));
     layout.setConstraints(categoryText, constraints);
     categoryLabel = categoryText;
   }
@@ -170,7 +167,7 @@ public class FormPanel extends JPanel {
     listCellRenderer.setHorizontalAlignment(DefaultListCellRenderer.CENTER);
     _categoryChoices.setRenderer(listCellRenderer);
     _categoryChoices.setPrototypeDisplayValue("123456789012345678901234567890123456");
-    _categoryChoices.setFont(ProcessedAsset.getFont(getClass(), "roboto-regular").deriveFont(20f));
+    _categoryChoices.setFont(ProcessedAsset.robotoRegular.deriveFont(20f));
     _categoryChoices.setSelectedIndex(0);
     layout.setConstraints(_categoryChoices, constraints);
     categoryChoices = _categoryChoices;
@@ -182,8 +179,8 @@ public class FormPanel extends JPanel {
     constraints.fill = REMAINDER;
     constraints.insets = new Insets(20, 0, 0, 0);
     JLabel filterText = new JLabel("FILTER", JLabel.LEFT);
-    filterText.setForeground(Color.black);
-    filterText.setFont(ProcessedAsset.getFont(getClass(), "roboto-black").deriveFont(20f));
+    filterText.setForeground(foregroundColor);
+    filterText.setFont(ProcessedAsset.robotoBlack.deriveFont(20f));
     layout.setConstraints(filterText, constraints);
     filterLabel = filterText;
   }
@@ -194,9 +191,9 @@ public class FormPanel extends JPanel {
     constraints.fill = NONE;
     constraints.insets = new Insets(0, 0, 0, 0);
     JCheckBox _repoCheckbox = new JCheckBox("Repository: ");
-    _repoCheckbox.setFont(ProcessedAsset.getFont(getClass(), "roboto-regular").deriveFont(20f));
-    _repoCheckbox.setForeground(Color.BLACK);
-    _repoCheckbox.setBackground(Color.WHITE);
+    _repoCheckbox.setFont(ProcessedAsset.robotoRegular.deriveFont(20f));
+    _repoCheckbox.setForeground(foregroundColor);
+    _repoCheckbox.setBackground(backgroundColor);
     layout.setConstraints(_repoCheckbox, constraints);
     repoCheckbox = _repoCheckbox;
   }
@@ -212,7 +209,7 @@ public class FormPanel extends JPanel {
     listCellRenderer.setHorizontalAlignment(DefaultListCellRenderer.CENTER);
     repoOperators.setRenderer(listCellRenderer);
     repoOperators.setPrototypeDisplayValue("123");
-    repoOperators.setFont(ProcessedAsset.getFont(getClass(), "roboto-regular").deriveFont(20f));
+    repoOperators.setFont(ProcessedAsset.robotoRegular.deriveFont(20f));
     layout.setConstraints(repoOperators, constraints);
     repoOperatorChoices = repoOperators;
   }
@@ -226,8 +223,9 @@ public class FormPanel extends JPanel {
     _repoField.setColumns(20);
     int repo = 0;
     _repoField.setValue(new Integer(repo));
-    _repoField.setFont(ProcessedAsset.getFont(getClass(), "opensans-italic").deriveFont(20f));
-    _repoField.setToolTipText("Fill it with integer, otherwise it will be automatically filled by 0");
+    _repoField.setFont(ProcessedAsset.openSansItalic.deriveFont(20f));
+    _repoField
+        .setToolTipText("Fill it with integer, otherwise it will be automatically filled by 0");
     layout.setConstraints(_repoField, constraints);
     repoField = _repoField;
   }
@@ -238,9 +236,9 @@ public class FormPanel extends JPanel {
     constraints.fill = RELATIVE;
     constraints.insets = new Insets(0, -190, 0, 0);
     JCheckBox _followersCheckbox = new JCheckBox("Followers: ");
-    _followersCheckbox.setFont(ProcessedAsset.getFont(getClass(), "roboto-regular").deriveFont(20f));
-    _followersCheckbox.setForeground(Color.BLACK);
-    _followersCheckbox.setBackground(Color.WHITE);
+    _followersCheckbox.setFont(ProcessedAsset.robotoRegular.deriveFont(20f));
+    _followersCheckbox.setForeground(foregroundColor);
+    _followersCheckbox.setBackground(backgroundColor);
     layout.setConstraints(_followersCheckbox, constraints);
     followersCheckbox = _followersCheckbox;
   }
@@ -258,7 +256,7 @@ public class FormPanel extends JPanel {
     followersOperators.setPrototypeDisplayValue("123");
     followersOperators.setSize(20, followersOperators.getPreferredSize().height);
     followersOperators
-        .setFont(ProcessedAsset.getFont(getClass(), "roboto-regular").deriveFont(20f));
+        .setFont(ProcessedAsset.robotoRegular.deriveFont(20f));
     layout.setConstraints(followersOperators, constraints);
     followersOperatorChoices = followersOperators;
   }
@@ -272,13 +270,14 @@ public class FormPanel extends JPanel {
     _followersField.setColumns(20);
     int followers = 0;
     _followersField.setValue(new Integer(followers));
-    _followersField.setFont(ProcessedAsset.getFont(getClass(), "opensans-italic").deriveFont(20f));
-    _followersField.setToolTipText("Fill it with integer, otherwise it will be automatically filled by 0");
+    _followersField.setFont(ProcessedAsset.openSansItalic.deriveFont(20f));
+    _followersField
+        .setToolTipText("Fill it with integer, otherwise it will be automatically filled by 0");
     layout.setConstraints(_followersField, constraints);
     followersField = _followersField;
   }
 
-  public void createSearchButton(){
+  public void createSearchButton() {
     constraints.gridx = 0;
     constraints.gridy = 4;
     constraints.fill = REMAINDER;
@@ -287,10 +286,10 @@ public class FormPanel extends JPanel {
     ImageIcon searchIcon = new ImageIcon(
         ProcessedAsset.getImage(getClass(), "\\assets\\search.png"));
     JButton _searchButton = new JButton(searchIcon);
-    _searchButton.setFont(ProcessedAsset.getFont(getClass(), "roboto-regular").deriveFont(20f));
+    _searchButton.setFont(ProcessedAsset.robotoRegular.deriveFont(20f));
     layout.setConstraints(_searchButton, constraints);
     _searchButton.addActionListener((ActionEvent e) -> {
-      if(keywordField.getText().isEmpty()) {
+      if (keywordField.getText().isEmpty()) {
         JOptionPane.showMessageDialog(null, "Error: keyword is missing");
       } else {
         controller.keyword = keywordField.getText();
@@ -302,7 +301,6 @@ public class FormPanel extends JPanel {
         controller.followersBoundOperator = (String) followersOperatorChoices.getSelectedItem();
         controller.followersBoundNumber = (Integer) followersField.getValue();
         controller.searchUsers();
-        formFilled = true;
       }
     });
     searchButton = _searchButton;

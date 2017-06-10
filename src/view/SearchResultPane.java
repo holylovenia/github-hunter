@@ -21,6 +21,7 @@ import javax.swing.event.ListSelectionListener;
  * Created by Holy on 09-Jun-17.
  */
 public class SearchResultPane extends JScrollPane implements ListSelectionListener {
+
   private JList usersList;
   private DefaultListModel listModel;
   private GitHubHunterController controller;
@@ -41,10 +42,13 @@ public class SearchResultPane extends JScrollPane implements ListSelectionListen
   public void valueChanged(ListSelectionEvent e) {
     int selectedIndex = usersList.getSelectedIndex();
     UserController user = SearchController.getSearchResult(selectedIndex);
-    if (((user.getRepositories() == null) &&  (user.getRepositoriesCount() > 0)) || ((user.getRepositories() != null) && (user.getRepositories().length != user.getRepositoriesCount()))) {
+    if (((user.getRepositories() == null) && (user.getRepositoriesCount() > 0)) || (
+        (user.getRepositories() != null) && (user.getRepositories().length != user
+            .getRepositoriesCount()))) {
       user.setRepositories();
     }
-    controller.getSearchScreen().getResultsSplitPane().getRepositoriesPane().updateRepositories(user.getRepositories());
+    controller.getSearchScreen().getResultsSplitPane().getRepositoriesPane()
+        .updateRepositories(user.getRepositories());
   }
 
   public void setController(GitHubHunterController _controller) {
@@ -77,7 +81,7 @@ public class SearchResultPane extends JScrollPane implements ListSelectionListen
       JLabel label = new JLabel();
       UserController user = (UserController) value;
       label.setText(getHtmlText(user));
-      label.setFont(ProcessedAsset.getFont(getClass(), "roboto-regular").deriveFont(20f));
+      label.setFont(ProcessedAsset.robotoRegular.deriveFont(20f));
       label.setIcon(new ImageIcon(ProcessedAsset
           .getScaledImage(ProcessedAsset.getImage(user.getAvatarUrl()), AVATAR_WIDTH,
               AVATAR_HEIGHT)));

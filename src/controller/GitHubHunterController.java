@@ -1,15 +1,6 @@
 package controller;
 
-import static java.awt.GridBagConstraints.NONE;
-
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import javax.swing.JFrame;
-import javax.swing.WindowConstants;
-import view.FormPanel;
-import view.RepositoriesPane;
-import view.ResultsSplitPane;
-import view.SearchResultPane;
+import view.ProcessedAsset;
 import view.SearchScreen;
 import view.StartScreen;
 
@@ -30,25 +21,9 @@ public class GitHubHunterController {
   private SearchScreen searchScreen;
 
   public GitHubHunterController() {
+    ProcessedAsset processedAsset = new ProcessedAsset();
     startScreen = new StartScreen();
     searchScreen = new SearchScreen();
-  }
-
-  public void searchUsers() {
-    SearchController searchController = new SearchController(type, keyword, repoUsed,
-        repoBoundOperator, repoBoundNumber, followersUsed, followersBoundOperator,
-        followersBoundNumber);
-    searchScreen.getResultsSplitPane().getSearchResultPane().updateResults(searchController.getSearchResults());
-    searchScreen.showResultsCountDialog();
-    System.out.println("SELESAI");
-  }
-
-  public StartScreen getStartScreen() {
-    return startScreen;
-  }
-
-  public SearchScreen getSearchScreen() {
-    return searchScreen;
   }
 
   public static void main(String[] args) {
@@ -62,8 +37,28 @@ public class GitHubHunterController {
     controller.getStartScreen().dispose();
     controller.getSearchScreen().setVisible(true);
     controller.getSearchScreen().getFormPanel().setController(controller);
-    controller.getSearchScreen().getResultsSplitPane().getSearchResultPane().setController(controller);
-    controller.getSearchScreen().getResultsSplitPane().getRepositoriesPane().setController(controller);
+    controller.getSearchScreen().getResultsSplitPane().getSearchResultPane()
+        .setController(controller);
+    controller.getSearchScreen().getResultsSplitPane().getRepositoriesPane()
+        .setController(controller);
+  }
+
+  public void searchUsers() {
+    SearchController searchController = new SearchController(type, keyword, repoUsed,
+        repoBoundOperator, repoBoundNumber, followersUsed, followersBoundOperator,
+        followersBoundNumber);
+    searchScreen.getResultsSplitPane().getSearchResultPane()
+        .updateResults(searchController.getSearchResults());
+    searchScreen.showResultsCountDialog();
+    System.out.println("SELESAI");
+  }
+
+  public StartScreen getStartScreen() {
+    return startScreen;
+  }
+
+  public SearchScreen getSearchScreen() {
+    return searchScreen;
   }
 
 }

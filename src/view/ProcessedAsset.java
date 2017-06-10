@@ -7,7 +7,6 @@ import java.awt.Image;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -16,7 +15,16 @@ import javax.swing.ImageIcon;
  * Created by Holy on 07-Jun-17.
  */
 public final class ProcessedAsset {
-  public ProcessedAsset() {}
+
+  public static Font openSansItalic;
+  public static Font robotoRegular;
+  public static Font robotoBlack;
+
+  public ProcessedAsset() {
+    openSansItalic = ProcessedAsset.getFont(getClass(), "opensans-italic");
+    robotoRegular = ProcessedAsset.getFont(getClass(), "roboto-regular");
+    robotoBlack = ProcessedAsset.getFont(getClass(), "roboto-black");
+  }
 
   public static Image getImage(Class _class, String _imagePath) {
     URL imgPath = _class.getResource(_imagePath);
