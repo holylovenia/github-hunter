@@ -38,15 +38,15 @@ public class GitHubHunterController {
     } catch (InterruptedException e) {
       e.printStackTrace();
     }
-    startScreen.dispose();
     disclaimerScreen.setVisible(true);
+    startScreen.dispose();
     try {
       Thread.sleep(5000);
     } catch (InterruptedException e) {
       e.printStackTrace();
     }
-    disclaimerScreen.dispose();
     searchScreen.setVisible(true);
+    disclaimerScreen.dispose();
   }
 
   public void setUpController() {
