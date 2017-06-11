@@ -16,10 +16,6 @@ public class Filter {
 
   /**
    * Determines what mathematical operator used to filter.
-   * <: lower than
-   * <:lower than or equal
-   * >: more than
-   * >=: more than or equal
    */
   private String boundOperator;
 
