@@ -429,7 +429,8 @@ public class FormPanel extends JPanel {
         GitHubHunterController.repoBoundOperator = (String) repoOperatorChoices.getSelectedItem();
         GitHubHunterController.repoBoundNumber = (Integer) repoField.getValue();
         GitHubHunterController.followersUsed = followersCheckbox.isSelected();
-        GitHubHunterController.followersBoundOperator = (String) followersOperatorChoices.getSelectedItem();
+        GitHubHunterController.followersBoundOperator = (String) followersOperatorChoices
+            .getSelectedItem();
         GitHubHunterController.followersBoundNumber = (Integer) followersField.getValue();
         controller.searchUsers();
       }

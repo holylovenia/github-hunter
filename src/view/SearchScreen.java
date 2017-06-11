@@ -3,7 +3,6 @@ package view;
 import static java.awt.GridBagConstraints.BOTH;
 
 import controller.GitHubHunterController;
-import controller.SearchController;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import javax.swing.JFrame;
@@ -120,7 +119,8 @@ public class SearchScreen extends JFrame {
    * Displays results count using option pane.
    */
   public void showResultsCountDialog() {
-    JOptionPane.showMessageDialog(null, controller.getSearchController().getSearchResults().size() + " users found",
+    JOptionPane.showMessageDialog(null,
+        controller.getSearchController().getSearchResults().size() + " users found",
         "Hunter's preys", JOptionPane.INFORMATION_MESSAGE);
   }
 
