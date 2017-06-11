@@ -2,6 +2,7 @@ package view;
 
 import static java.awt.GridBagConstraints.BOTH;
 
+import controller.GitHubHunterController;
 import controller.SearchController;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -43,6 +44,13 @@ public class SearchScreen extends JFrame {
   private GridBagConstraints constraints;
 
   /**
+   * Instantiation of <code>GitHubHunterController</code>.
+   *
+   * @see GitHubHunterController
+   */
+  private GitHubHunterController controller;
+
+  /**
    * Constructor.
    *
    * <p>Sets title, ability to resize, and close operation. Constructs, prepares, and adds
@@ -78,6 +86,17 @@ public class SearchScreen extends JFrame {
   }
 
   /**
+   * Setter for <code>controller</code>.
+   *
+   * <p>Initializes <code>controller</code> with <code>controller</code>.</p>
+   *
+   * @param controller Controls GUI and search data flow.
+   */
+  public void setController(GitHubHunterController controller) {
+    this.controller = controller;
+  }
+
+  /**
    * Creates and organizes <code>formPanel</code>.
    */
   public void createFormPanel() {
@@ -101,7 +120,7 @@ public class SearchScreen extends JFrame {
    * Displays results count using option pane.
    */
   public void showResultsCountDialog() {
-    JOptionPane.showMessageDialog(null, SearchController.getSearchResults().size() + " users found",
+    JOptionPane.showMessageDialog(null, controller.getSearchController().getSearchResults().size() + " users found",
         "Hunter's preys", JOptionPane.INFORMATION_MESSAGE);
   }
 

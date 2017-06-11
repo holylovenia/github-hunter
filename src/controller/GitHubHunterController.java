@@ -76,14 +76,29 @@ public class GitHubHunterController {
   private SearchScreen searchScreen;
 
   /**
+   * Instatiation of SearchController class.
+   *
+   * @see SearchController
+   */
+  private SearchController searchController;
+
+  /**
+   * Instatiation of ProcessedAsset class.
+   *
+   * @see ProcessedAsset
+   */
+  private ProcessedAsset processedAsset;
+
+  /**
    * Constructor.
    *
    * <p>Sets <code>ProcessedAsset</code> up as static class. Constructs <code>startScreen</code>,
    * <code>disclaimerScreen</code>, and <code>searchScreen</code>. Displays GUI. Prepares
-   * controller.</p>
+   * controller, <code>searchController</code>, and <code>processedAsset</code>.</p>
    */
   public GitHubHunterController() {
-    ProcessedAsset processedAsset = new ProcessedAsset();
+    processedAsset = new ProcessedAsset();
+    searchController = new SearchController();
     startScreen = new StartScreen();
     disclaimerScreen = new DisclaimerScreen();
     searchScreen = new SearchScreen();
@@ -117,6 +132,7 @@ public class GitHubHunterController {
    */
   public void setUpController() {
     searchScreen.getFormPanel().setController(this);
+    searchScreen.setController(this);
     searchScreen.getResultsSplitPane().getSearchResultPane()
         .setController(this);
     searchScreen.getResultsSplitPane().getRepositoriesPane()
@@ -127,13 +143,12 @@ public class GitHubHunterController {
    * Prepares the search and display the results.
    */
   public void searchUsers() {
-    SearchController searchController = new SearchController(category, keyword, repoUsed,
+    searchController.setUpSearchController(category, keyword, repoUsed,
         repoBoundOperator, repoBoundNumber, followersUsed, followersBoundOperator,
         followersBoundNumber);
     searchScreen.getResultsSplitPane().getSearchResultPane()
-        .updateResults(SearchController.getSearchResults());
+        .updateResults(searchController.getSearchResults());
     searchScreen.showResultsCountDialog();
-    System.out.println("SELESAI");
   }
 
   /**
@@ -161,5 +176,14 @@ public class GitHubHunterController {
    */
   public SearchScreen getSearchScreen() {
     return searchScreen;
+  }
+
+  /**
+   * Getter for <code>searchController</code>.
+   *
+   * @return Attribute <code>searchController</code>.
+   */
+  public SearchController getSearchController() {
+    return searchController;
   }
 }

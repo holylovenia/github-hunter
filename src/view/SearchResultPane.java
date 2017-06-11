@@ -72,6 +72,10 @@ public class SearchResultPane extends JScrollPane implements ListSelectionListen
   @Override
   public void valueChanged(ListSelectionEvent e) {
     int selectedIndex = usersList.getSelectedIndex();
+    if (selectedIndex == -1) {
+      usersList.setSelectedIndex(0);
+      selectedIndex = 0;
+    }
     UserController user = SearchController.getSearchResult(selectedIndex);
     if (((user.getRepositories() == null) && (user.getRepositoriesCount() > 0)) || (
         (user.getRepositories() != null) && (user.getRepositories().size() != user

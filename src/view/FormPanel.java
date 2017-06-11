@@ -423,14 +423,14 @@ public class FormPanel extends JPanel {
       if (keywordField.getText().isEmpty()) {
         JOptionPane.showMessageDialog(null, "Error: keyword is missing");
       } else {
-        controller.keyword = keywordField.getText();
-        controller.category = categoryChoices.getSelectedIndex();
-        controller.repoUsed = repoCheckbox.isSelected();
-        controller.repoBoundOperator = (String) repoOperatorChoices.getSelectedItem();
-        controller.repoBoundNumber = (Integer) repoField.getValue();
-        controller.followersUsed = followersCheckbox.isSelected();
-        controller.followersBoundOperator = (String) followersOperatorChoices.getSelectedItem();
-        controller.followersBoundNumber = (Integer) followersField.getValue();
+        GitHubHunterController.keyword = keywordField.getText();
+        GitHubHunterController.category = categoryChoices.getSelectedIndex();
+        GitHubHunterController.repoUsed = repoCheckbox.isSelected();
+        GitHubHunterController.repoBoundOperator = (String) repoOperatorChoices.getSelectedItem();
+        GitHubHunterController.repoBoundNumber = (Integer) repoField.getValue();
+        GitHubHunterController.followersUsed = followersCheckbox.isSelected();
+        GitHubHunterController.followersBoundOperator = (String) followersOperatorChoices.getSelectedItem();
+        GitHubHunterController.followersBoundNumber = (Integer) followersField.getValue();
         controller.searchUsers();
       }
     });
