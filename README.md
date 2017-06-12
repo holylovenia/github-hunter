@@ -46,7 +46,7 @@ Web service yang berbasis arsitektur REST dikenal sebagai RESTful Web Service. W
 
 ### GitHub API
 
-API (Application Program Interface) yang menyediakan kelas-kelas yang berhubungan dengan model domain dari GitHub, operasi-operasi yang dimiliki dan didefinisikan sebagai metode, dan referensi-referensi objek.
+API (Application Program Interface) yang menyediakan kelas-kelas yang berhubungan dengan main.test.model domain dari GitHub, operasi-operasi yang dimiliki dan didefinisikan sebagai metode, dan referensi-referensi objek.
 
 #### Skema
 Akses yang dilakukan menggunakan HTTPS, dan diakses lewat https://api.github.com. Semua data dikirim dan diterima sebagai JSON.
