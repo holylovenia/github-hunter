@@ -2,124 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ed46590-efd4-4b11-8b1d-a306053d7968" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/GitHubHunter.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/class-use/GitHubHunter.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/controller/GitHubHunterController.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/controller/JsonRequest.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/controller/RepositoryController.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/controller/SearchController.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/controller/UserController.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/controller/class-use/GitHubHunterController.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/controller/class-use/JsonRequest.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/controller/class-use/RepositoryController.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/controller/class-use/SearchController.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/controller/class-use/UserController.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/controller/package-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/controller/package-summary.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/controller/package-tree.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/controller/package-use.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/model/Filter.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/model/Repository.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/model/Search.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/model/User.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/model/class-use/Filter.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/model/class-use/Repository.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/model/class-use/Search.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/model/class-use/User.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/model/package-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/model/package-summary.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/model/package-tree.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/model/package-use.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/package-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/package-summary.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/package-tree.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/package-use.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/view/DisclaimerScreen.DisclaimerPanel.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/view/DisclaimerScreen.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/view/FormPanel.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/view/ProcessedAsset.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/view/RepositoriesPane.RepositoriesListRenderer.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/view/RepositoriesPane.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/view/ResultsSplitPane.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/view/SearchResultPane.SearchResultListRenderer.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/view/SearchResultPane.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/view/SearchScreen.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/view/StartScreen.StartPanel.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/view/StartScreen.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/view/class-use/DisclaimerScreen.DisclaimerPanel.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/view/class-use/DisclaimerScreen.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/view/class-use/FormPanel.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/view/class-use/ProcessedAsset.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/view/class-use/RepositoriesPane.RepositoriesListRenderer.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/view/class-use/RepositoriesPane.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/view/class-use/ResultsSplitPane.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/view/class-use/SearchResultPane.SearchResultListRenderer.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/view/class-use/SearchResultPane.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/view/class-use/SearchScreen.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/view/class-use/StartScreen.StartPanel.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/view/class-use/StartScreen.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/view/package-frame.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/view/package-summary.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/view/package-tree.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/Javadoc/view/package-use.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/GitHubHunter.java" afterPath="$PROJECT_DIR$/src/main/GitHubHunter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/controller/GitHubHunterController.java" afterPath="$PROJECT_DIR$/src/main/controller/GitHubHunterController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/controller/JsonRequest.java" afterPath="$PROJECT_DIR$/src/main/controller/JsonRequest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/controller/RepositoryController.java" afterPath="$PROJECT_DIR$/src/main/controller/RepositoryController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/controller/SearchController.java" afterPath="$PROJECT_DIR$/src/main/controller/SearchController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/controller/UserController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/model/Filter.java" afterPath="$PROJECT_DIR$/src/main/model/Filter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/model/Repository.java" afterPath="$PROJECT_DIR$/src/main/model/Repository.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/model/Search.java" afterPath="$PROJECT_DIR$/src/main/model/Search.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/model/User.java" afterPath="$PROJECT_DIR$/src/main/model/User.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/view/DisclaimerScreen.java" afterPath="$PROJECT_DIR$/src/main/view/DisclaimerScreen.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/view/FormPanel.java" afterPath="$PROJECT_DIR$/src/main/view/FormPanel.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/view/ProcessedAsset.java" afterPath="$PROJECT_DIR$/src/main/view/ProcessedAsset.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/view/RepositoriesPane.java" afterPath="$PROJECT_DIR$/src/main/view/RepositoriesPane.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/view/ResultsSplitPane.java" afterPath="$PROJECT_DIR$/src/main/view/ResultsSplitPane.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/view/SearchResultPane.java" afterPath="$PROJECT_DIR$/src/main/view/SearchResultPane.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/view/SearchScreen.java" afterPath="$PROJECT_DIR$/src/main/view/SearchScreen.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/view/StartScreen.java" afterPath="$PROJECT_DIR$/src/main/view/StartScreen.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/view/assets/font/opensans-italic.ttf" afterPath="$PROJECT_DIR$/src/main/view/assets/font/opensans-italic.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/view/assets/font/roboto-black.ttf" afterPath="$PROJECT_DIR$/src/main/view/assets/font/roboto-black.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/view/assets/font/roboto-regular.ttf" afterPath="$PROJECT_DIR$/src/main/view/assets/font/roboto-regular.ttf" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/view/assets/logo.png" afterPath="$PROJECT_DIR$/src/main/view/assets/logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/view/assets/octocat.gif" afterPath="$PROJECT_DIR$/src/main/view/assets/octocat.gif" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/view/assets/search.png" afterPath="$PROJECT_DIR$/src/main/view/assets/search.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Javadoc/allclasses-frame.html" afterPath="$PROJECT_DIR$/doc/Javadoc/allclasses-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Javadoc/allclasses-noframe.html" afterPath="$PROJECT_DIR$/doc/Javadoc/allclasses-noframe.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Javadoc/constant-values.html" afterPath="$PROJECT_DIR$/doc/Javadoc/constant-values.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Javadoc/deprecated-list.html" afterPath="$PROJECT_DIR$/doc/Javadoc/deprecated-list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Javadoc/help-doc.html" afterPath="$PROJECT_DIR$/doc/Javadoc/help-doc.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Javadoc/index-files/index-1.html" afterPath="$PROJECT_DIR$/doc/Javadoc/index-files/index-1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Javadoc/index-files/index-10.html" afterPath="$PROJECT_DIR$/doc/Javadoc/index-files/index-10.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Javadoc/index-files/index-11.html" afterPath="$PROJECT_DIR$/doc/Javadoc/index-files/index-11.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Javadoc/index-files/index-12.html" afterPath="$PROJECT_DIR$/doc/Javadoc/index-files/index-12.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Javadoc/index-files/index-13.html" afterPath="$PROJECT_DIR$/doc/Javadoc/index-files/index-13.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Javadoc/index-files/index-14.html" afterPath="$PROJECT_DIR$/doc/Javadoc/index-files/index-14.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Javadoc/index-files/index-15.html" afterPath="$PROJECT_DIR$/doc/Javadoc/index-files/index-15.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Javadoc/index-files/index-16.html" afterPath="$PROJECT_DIR$/doc/Javadoc/index-files/index-16.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Javadoc/index-files/index-17.html" afterPath="$PROJECT_DIR$/doc/Javadoc/index-files/index-17.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Javadoc/index-files/index-18.html" afterPath="$PROJECT_DIR$/doc/Javadoc/index-files/index-18.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Javadoc/index-files/index-19.html" afterPath="$PROJECT_DIR$/doc/Javadoc/index-files/index-19.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Javadoc/index-files/index-2.html" afterPath="$PROJECT_DIR$/doc/Javadoc/index-files/index-2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Javadoc/index-files/index-20.html" afterPath="$PROJECT_DIR$/doc/Javadoc/index-files/index-20.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Javadoc/index-files/index-21.html" afterPath="$PROJECT_DIR$/doc/Javadoc/index-files/index-21.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Javadoc/index-files/index-3.html" afterPath="$PROJECT_DIR$/doc/Javadoc/index-files/index-3.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Javadoc/index-files/index-4.html" afterPath="$PROJECT_DIR$/doc/Javadoc/index-files/index-4.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Javadoc/index-files/index-5.html" afterPath="$PROJECT_DIR$/doc/Javadoc/index-files/index-5.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Javadoc/index-files/index-6.html" afterPath="$PROJECT_DIR$/doc/Javadoc/index-files/index-6.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Javadoc/index-files/index-7.html" afterPath="$PROJECT_DIR$/doc/Javadoc/index-files/index-7.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Javadoc/index-files/index-8.html" afterPath="$PROJECT_DIR$/doc/Javadoc/index-files/index-8.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Javadoc/index-files/index-9.html" afterPath="$PROJECT_DIR$/doc/Javadoc/index-files/index-9.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Javadoc/index.html" afterPath="$PROJECT_DIR$/doc/Javadoc/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Javadoc/overview-frame.html" afterPath="$PROJECT_DIR$/doc/Javadoc/overview-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Javadoc/overview-summary.html" afterPath="$PROJECT_DIR$/doc/Javadoc/overview-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Javadoc/overview-tree.html" afterPath="$PROJECT_DIR$/doc/Javadoc/overview-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Javadoc/package-list" afterPath="$PROJECT_DIR$/doc/Javadoc/package-list" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/Javadoc/serialized-form.html" afterPath="$PROJECT_DIR$/doc/Javadoc/serialized-form.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/github-hunter.iml" afterPath="$PROJECT_DIR$/github-hunter.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -136,56 +19,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="ExportTestResults" exportFormat="Xml" outputFolder="$PROJECT_DIR$/doc" userTempatePath="" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="SearchControllerTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/test/controller/SearchControllerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="31">
-              <caret line="31" column="13" lean-forward="false" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserControllerTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/test/controller/UserControllerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="57" column="32" lean-forward="false" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JsonRequestTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/test/controller/JsonRequestTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-19">
-              <caret line="49" column="9" lean-forward="false" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SearchTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/test/model/SearchTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-19">
-              <caret line="58" column="33" lean-forward="false" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -332,10 +166,6 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -351,12 +181,13 @@
     <property name="js.eslint.eslintPackage" value="" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="project.structure.side.proportion" value="0.66743296" />
     <property name="Downloaded.Files.Path.Enabled" value="true" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Bac-Man" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -782,27 +613,29 @@
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.96347034" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32990867" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39954337" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32534248" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30936074" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30936074" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.221875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3458904" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39954337" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1063,6 +896,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
           <caret line="18" column="53" lean-forward="false" selection-start-line="18" selection-start-column="53" selection-end-line="18" selection-end-column="53" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1088,6 +922,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="19" column="54" lean-forward="false" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1200,6 +1035,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="327">
           <caret line="81" column="40" lean-forward="false" selection-start-line="81" selection-start-column="40" selection-end-line="81" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1243,14 +1079,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4400">
           <caret line="198" column="5" lean-forward="false" selection-start-line="198" selection-start-column="5" selection-end-line="198" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/github-hunter.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -1346,6 +1174,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/github-hunter.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/test/controller/SearchControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="31">
@@ -1412,7 +1248,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.66743296" />
               </list>
             </option>
           </splitter-proportions>
@@ -1432,11 +1268,11 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>ant:ant-jakarta-oro:1.6.1</last-edited>
+          <last-edited>org.json:json:20140107</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.66743296" />
               </list>
             </option>
           </splitter-proportions>
