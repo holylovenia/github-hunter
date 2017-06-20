@@ -79,6 +79,9 @@ Respon dari redirect akan mengandung Location header field yang memiliki URI dar
 5. PUT: menggantikan sumber atau koleksi.
 6. DELETE: menghapus sumber.
 
+[Selengkapnya](https://developer.github.com/v3/)
+
+
 
 ------------------------------------------------------------------
 
