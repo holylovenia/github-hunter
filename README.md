@@ -109,6 +109,13 @@ GitHub Hunter will show a pop-up window to inform the number of users who match 
 
 The left panel will show the list of user identities. The right panel will show a quick summary of repositories of the selected user. When the repository is clicked, user will be directed to the specified GitHub repository via web browser. If the selection moves to another user, the repository summary shown will also change to match repositories data of the currently selected user.
 
+### Additional information about GitHub Hunter
+
+[Specification details of project](https://github.com/holylovenia/github-hunter/blob/master/doc/Project%201%20Ca%20Labpro.pdf)
+[Javadoc](https://github.com/holylovenia/github-hunter/blob/master/doc/Javadoc/index.html)
+[Class Diagram](https://github.com/holylovenia/github-hunter/blob/master/doc/github-hunter-class-diagram.jpg)
+[Unit Tests Result](https://github.com/holylovenia/github-hunter/blob/master/doc/Test%20Results%20-%20Unit_Tests.xml)
+[Checkstyle Result](https://github.com/holylovenia/github-hunter/blob/master/doc/Checkstyle.txt)
 
 
 [gif01]: doc/visual/github-hunter.gif
